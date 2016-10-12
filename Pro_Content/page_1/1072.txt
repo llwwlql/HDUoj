@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1072 -- Puzzle Out</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1072></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1072&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Puzzle Out</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 5000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 1236</td><td width="10px"></td><td><b>Accepted:</b> 322</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">The scientific committee members of the 26th ACM/ICPC, who design the contest problems, use the following encryption algorithm to communicate the problem drafts securely through the Internet. To encrypt a text, all occurrences of each letter is replaced with another letter (possibly itself), such that no two letters are encrypted to the same letter. Both original and encrypted texts consist of only upper-case letters and blanks. Blanks are not encrypted and are repeated exactly in the encrypted text. As an example, the string GSRH RH GSV URIHG HZNKOV is the encrypted form of THIS IS THE FIRST SAMPLE according to the encryption table (A -> Z, B -> Y, C -> X,..., Z -> A).<br><br>A recipient of a problem draft has lost the encryption table, but he has a dictionary which includes all the possible words appearing in the problems. You are to help him set up a decryption table to enable him restore the original problem draft from the encrypted one. Given a dictionary of the original words used in the text, and the encrypted text, we want to find the right encryption table such that after decrypting the given encrypted text back to the original one, all words can be found in the dictionary. <br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The first part of the input file is a dictionary of English words common to all test cases. The first line of the file is d (1 <= d <= 50000); the number of words in the dictionary, followed by d lines each containing a word in the dictionary. The words in the dictionary are sorted in alphabetical order and all are in uppercase. Each word has at most 20 characters, but you can assume that sum of the length of all words in the dictionary is no more than 350,000. The next line contains a single integer t (1 <= t <= 10), the number of test cases, followed by the input data for each test case. Each test case, which is preceded by a single blank line, consists of multiple lines in the input file forming the encrypted text. Each line has a string containing only uppercase letters and blank. You may assume that no line break is occurred in the middle of a word and there may be arbitrary number of blank characters at the end of each line. Maximum length of input lines is 80. </div><p class="pst">Output</p><div class="ptx" lang="en-US">The output contains exactly t lines, each corresponding to a test case. Each line should contain a single string of 26 characters which is the encryption of the string ABCDEFGHIJKLMNOPQRSTUVWXYZ according to the encryption table used in the test case. Letters in the output string should be in uppercase. It is possible that some letters do not appear in the encrypted text at all. In this case, put a * mark in place of those letters not appearing in the decrypted version of the input text. If the test case has no solution, the output line should contain #No solution#. If there is more than one possible encryption table for a test case, the output line should contain #More than one solution#.</div><p class="pst">Sample Input</p><pre class="sio">14
+BE
+CHANGE
+FIRST
+IN
+IS
+MUST
+SAMPLE
+SEE
+THE
+THIS
+TO
+WISH
+WORLD
+YOU
+4
+
+GSRH RH GSV URIHG HZNKOV
+
+IZM BMVU    SP UGP 
+RGTANP IZM KFVG UZ VPP 
+FA UGP KZWCQ
+
+XYZ ABCDEFG
+
+XZY ABD
+
+
+
+</pre><p class="pst">Sample Output</p><pre class="sio">Z***VU*SR**ON**K*IHG******
+TSRQP*NGF**CBAZ**WVUM*K*I*
+#No solution#
+#More than one solution#</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Tehran+2001">Tehran 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1072">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1072>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1072">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

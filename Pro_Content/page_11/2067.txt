@@ -1,0 +1,44 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2067 -- Young, Poor and Busy</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2067></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2067&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Young, Poor and Busy</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 185</td><td width="10px"></td><td><b>Accepted:</b> 92</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Ken and Keiko are young, poor and busy. Short explanation: they are students, and ridden with part-time jobs. To make things worse, Ken lives in Hakodate and Keiko in Tokyo. They want to meet, but since they have neither time nor money, they have to go back to their respective jobs immediately after, and must be careful about transportation costs. Help them find the most economical meeting point. <br>Ken starts from Hakodate, Keiko from Tokyo. They know schedules and fares for all trains, and can choose to meet anywhere including their hometowns, but they cannot leave before 8am and must be back by 6pm in their respective towns. Train changes take no time (one can leave the same minute he/she arrives), but they want to meet for at least 30 minutes in the same city.<br><br>There can be up to 100 cities and 2000 direct connections, so you should devise an algorithm clever enough for the task.<br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input is a sequence of data sets.<br><br>The first line of a data set contains a single integer, the number of connections in the timetable. It is not greater than 2000.<br><br>Connections are given one on a line, in the following format.<br><br>Start_city HH:MM Arrival_city HH:MM price<br><br>Start_city and Arrival_city are composed of up to 16 alphabetical characters, with only the first one in upper case. Departure and arrival times are given in hours and minutes (two digits each, separated by ":") from 00:00 to 23:59. Arrival time is strictly after departure time. The price for one connection is an integer between 1 and 10000, inclusive. Fields are separated by spaces.<br><br>The end of the input is marked by a line containing a zero.<br></div><p class="pst">Output</p><div class="ptx" lang="en-US">The output should contain one integer for each data set, the lowest cost possible. This is the total fare of all connections they use.<br><br>If there is no solution to a data set, you should output a zero.<br><br>The solution to each data set should be given in a separate line.<br></div><p class="pst">Sample Input</p><pre class="sio">5
+Hakodate 08:15 Morioka 12:30 2500
+Morioka 14:05 Hakodate 17:30 2500
+Morioka 15:30 Hakodate 18:00 3000
+Morioka 14:30 Tokyo 17:50 3000
+Tokyo 08:30 Morioka 13:35 3000
+4
+Hakodate 08:15 Morioka 12:30 2500
+Morioka 14:04 Hakodate 17:30 2500
+Morioka 14:30 Tokyo 17:50 3000
+Tokyo 08:30 Morioka 13:35 3000
+18
+Hakodate 09:55 Akita 10:53 3840
+Hakodate 14:14 Akita 16:09 1920
+Hakodate 18:36 Akita 19:33 3840
+Hakodate 08:00 Morioka 08:53 3550
+Hakodate 22:40 Morioka 23:34 3550
+Akita 14:23 Tokyo 14:53 2010
+Akita 20:36 Tokyo 21:06 2010
+Akita 08:20 Hakodate 09:18 3840
+Akita 13:56 Hakodate 14:54 3840
+Akita 21:37 Hakodate 22:35 3840
+Morioka 09:51 Tokyo 10:31 2660
+Morioka 14:49 Tokyo 15:29 2660
+Morioka 19:42 Tokyo 20:22 2660
+Morioka 15:11 Hakodate 16:04 3550
+Morioka 23:03 Hakodate 23:56 3550
+Tokyo 09:44 Morioka 11:04 1330
+Tokyo 21:54 Morioka 22:34 2660
+Tokyo 11:34 Akita 12:04 2010
+0
+</pre><p class="pst">Sample Output</p><pre class="sio">11000
+0
+11090
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Japan+2001">Japan 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2067">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2067>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2067">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

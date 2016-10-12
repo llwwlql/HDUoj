@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1097 -- Roads Scholar</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1097></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1097&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Roads Scholar</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 887</td><td width="10px"></td><td><b>Accepted:</b> 326</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">The Hines Sign company has been contracted to supply roadside signs for the state highway system. The head of the company has put his son Myles Hines in charge of one particular class of signs, those which indicate the number of miles to carious towns. Myles is given a layout of the highway system and a set of locations where the signs should go: he is in charge of determining the mileage to nearby cities. To select which cities should be listed on any sign, he uses the following strategy: City X is put on the sign if the sign is on a road such that the shortest path from the intersection immediately preceding the sign to X uses the road. You may assume that there is only one shortest path between each pair of intersections. </div><p class="pst">Input</p><div class="ptx" lang="en-US">Input consists of a single problem instance consisting of a description of the highway system, followed by a set of sign locations. The highway system is defined as a set of intersections (some of which are also city locations) and a set of roads connecting the intersections. The first line of a problem instance contains three positive integers n m k: n specifies the number of intersections (numbered 0, 1, 2, ..., n-1), m indicates the number of roads between connections, and k indicated the number of intersections which are also cities. Following this are m lines of the form i1 i2 d, which specifies a two-way road between intersections i1 and i2 of distance d. The next k lines are of the form i name, which specifies that intersection i is a city called name. After this is a line with a single positive integer s indicating the number of signs to place on the highway. The remaining s lines are of the form i1 i2 d indicating that a sign is to be placed on the road going from i1 to i2 a distance d from i1 (d will always be non-zero and less than the distance from i1 to i2). For all problem instances, the length of name will be <= 18 characters, and 5 <= n <= 30. All distances will be non-zero and to the nearest hundredth mile.</div><p class="pst">Output</p><div class="ptx" lang="en-US">Each sign should be output as follows:<br><br>name1 d1<br>name2 d2<br>...<br><br>where each namei should be left justified in a field of width 20, and each distance di is rounded to the nearest mile. (Round .50 up. For example, 7.50 should be rounded to 8.) Each name-distance pair should be sorted by the rounded distance; pairs with the same rounded distance should be printed in alphabetical order. Signs should be output in the order in which they were listed in the input, and you should separate each sign output with a blank line. You may assume that every sign will have at least one city listed on it.<br></div><p class="pst">Sample Input</p><pre class="sio">8 17 4
+0 1 7.12
+0 2 8.34
+0 3 5.33
+0 4 5.36
+1 2 4.21
+1 6 6.99
+1 7 10.26
+2 3 2.74
+2 6 5.04
+3 4 4.12
+3 5 7.72
+3 6 5.71
+4 5 8.94
+4 6 10.29
+5 6 5.47
+5 7 8.55
+6 7 6.01
+0 Allentown
+1 Bobtown
+6 Charlestown
+7 Downville
+3
+0 3 2.17
+3 2 0.45
+4 3 3.14</pre><p class="pst">Sample Output</p><pre class="sio">Charlestown         9
+Downville           15
+
+Bobtown             7
+
+Charlestown         7
+Bobtown             8
+Downville           13</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=East+Central+North+America+2001">East Central North America 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1097">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1097>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1097">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

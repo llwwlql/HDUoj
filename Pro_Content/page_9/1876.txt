@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1876 -- The Letter Carrier's Rounds</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1876></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1876&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">The Letter Carrier's Rounds</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 322</td><td width="10px"></td><td><b>Accepted:</b> 100</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">For an electronic mail application you are to describe the SMTP-based communication that takes place between pairs of MTAs. The sender's User Agent gives a formatted message to the sending Message Transfer Agent (MTA). The sending MTA communicates with the receiving MTA using the Simple Mail Transfer Protocol (SMTP). The receiving MTA delivers mail to the receiver's User Agent. After a communication link is initialized, the sending MTA transmits command lines, one at a time, to the receiving MTA, which returns a three-digit coded response after each command is processed. The sender commands are shown below in the order sent for each message. There is more than one RCPT TO line when the same message is sent to several users at the same MTA. A message to users at different MTAs requires separate SMTP sessions. <br><blockquote><table cellpadding=0><tr> <td><code>HELO</code> <em>myname</em> <td>Identifies the sender to the receiver (yes, there is only one L).<tr> <td><code>MAIL FROM:</code>&lt;<em>sender</em>&gt; <td>Identifies the message sender<tr> <td><code>RCPT TO:</code>&lt;<em>user</em>&gt; <td>Identifies one recipient of the message<tr> <td><code>DATA</code> <td>Followed by an arbitrary number of lines of text comprising the message      body, ending with a line containing a period in column one.<tr> <td><code>QUIT</code> <td>Terminates the communication.</table></blockquote><br>The following response codes are sent by the receiving MTA: <br><blockquote><table><tr><td>221	<td>Closing connection (after QUIT)<tr><td>250	<td>Action was okay (after MAIL FROM and RCPT TO specifying an acceptable user, or completion of a message)<tr><td>354	<td>Start sending mail (after DATA)<tr><td>550	<td>Action not taken; no such user here (after RCPT TO with unknown user)</table></blockquote></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input contains descriptions of MTAs followed by an arbitrary number of messages. Each MTA description begins with the MTA designation and its name (1 to 15 alphanumeric characters). Following the MTA name is the number of users that receive mail at that MTA and a list of the users (1 to 15 alphanumeric characters each). The MTA description is terminated by an asterisk in column 1. Each message begins with the sending user's name and is followed by a list of recipient identifiers. Each identifier has the form user@mtaname. The message (each line containing no more than 72 characters) begins and terminates with an asterisk in column 1. A line with an asterisk in column 1 instead of a sender and recipient list indicates the end of the entire input. </div><p class="pst">Output</p><div class="ptx" lang="en-US">For each message, show the communication between the sending and receiving MTAs. Every MTA mentioned in a message is a valid MTA; however, message recipients may not exist at the destination MTA. The receiving MTA rejects mail for those users by responding to the RCPT TO command with the 550 code. A rejection will not affect delivery to authorized users at the same MTA. If there is not at least one authorized recipient at a particular MTA, the DATA is not sent. Only one SMTP session is used to send a message to users at a particular MTA. For example, a message to 5 users at the same MTA will have only one SMTP session. Also a message is addressed to the same user only once. The order in which receiving MTAs are contacted by the sender is unspecified. As shown in the sample output , prefix the communication with the communicating MTA names, and indent each communication line. </div><p class="pst">Sample Input</p><pre class="sio">MTA London 4 Fiona Paul Heather Nevil
+MTA SanFrancisco 3 Mario Luigi Shariff 
+MTA Paris 3 Jacque Suzanne Maurice
+MTA HongKong 3 Chen Jeng Hee
+MTA MexicoCity 4 Conrado Estella Eva Raul
+MTA Cairo 3 Hamdy Tarik Misa
+*
+Hamdy@Cairo Conrado@MexicoCity Shariff@SanFrancisco Lisa@MexicoCity
+*
+Congratulations on your efforts !!
+--Hamdy
+*
+Fiona@London Chen@HongKong Natasha@Paris
+*
+Thanks for the report!  --Fiona
+*
+*
+</pre><p class="pst">Sample Output</p><pre class="sio">Connection between Cairo and MexicoCity
+     HELO Cairo
+     250
+     MAIL FROM:&lt;Hamdy@Cairo>
+     250
+     RCPT TO:&lt;Conrado@MexicoCity>
+     250
+     RCPT TO:&lt;Lisa@MexicoCity>
+     550
+     DATA
+     354
+     Congratulations on your efforts !!
+     --Hamdy
+     .
+     250
+     QUIT
+     221
+Connection between Cairo and SanFrancisco
+     HELO Cairo
+     250
+     MAIL FROM:&lt;Hamdy@Cairo>
+     250
+     RCPT TO:&lt;Shariff@SanFrancisco>
+     250
+     DATA
+     354
+     Congratulations on your efforts !!
+     --Hamdy
+     .
+     250
+     QUIT
+     221
+Connection between London and HongKong
+     HELO London
+     250
+     MAIL FROM:&lt;Fiona@London>
+     250
+     RCPT TO:&lt;Chen@HongKong>
+     250
+     DATA
+     354
+     Thanks for the report!  --Fiona
+     .
+     250
+     QUIT
+     221
+Connection between London and Paris
+     HELO London
+     250
+     MAIL FROM:&lt;Fiona@London>
+     250
+     RCPT TO:&lt;Natasha@Paris>
+     550
+     QUIT
+     221
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=World+Finals+1999">World Finals 1999</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1876">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1876>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1876">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

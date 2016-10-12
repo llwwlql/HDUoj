@@ -1,0 +1,57 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1086 -- Unscrambling Images</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1086></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1086&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Unscrambling Images</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 774</td><td width="10px"></td><td><b>Accepted:</b> 306</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Quadtrees are commonly used for encoding digital images in a compact form. Given an n * n image (where n is a power of 2, 1 <= n <= 16), its quadtree encoding is computed as follows. Start with a quadtree with exactly one node, namely the root, and associate with this node the n * n square region for the entire image. Then the following is performed recursively: <br>1. If every pixel in the region associated with the current node has an intensity value of p, then the node is made a leaf and it is assigned an associated value of p. <br>2. Otherwise, four nodes are added as children of the current node. The region is divided into four equal (square) quadrants and each quadrant is assigned to one child node. The algorithm recurses on each of the children nodes. <br>When the process terminates, we obtain a quadtree in which every internal node has four children. Every leaf node has an associated value representing the intensity of the region corresponding to the leaf node. An example of an image and its quadtree encoding is shown below. <br><center><img src="images/1086/1086_1.jpg"></center><br>We have assumed that the four children represent, from left to right, the upper left, upper right, lower left, and lower right quadrants, respectively. <br>To easily identify a node in a quadtree, we assign a number to each node by the following rules: <br>1. The root is numbered 0. <br>2. If the number of a node is k, then its children, from left to right, are numbered 4k+1; 4k+2; 4k+3; 4k +4. <br>Images encoded as quadtrees can be encrypted by a secret password as follows: whenever a subdivision is performed, the four branches are reordered. The reordering may be different at each node, but it is completely determined by the password and the node number. <br>Unfortunately, some people use the "save password" feature in the encoding program and use the same password for multiple images. By observing the encoding of a well-chosen test image, any image encoded with the same password can be decoded without the password. In this test image, each pixel has a distinct intensity from 0 to n^2-1 arranged from left-to-right, top-to-bottom in increasing order. An example for n = 16 is given below: <br><center><img src="images/1086/1086_2.jpg"></center><br>You managed to gain access to the encoding program and used it to encode the test image. Given the quadtree encoding of the test image, write a program to decode any other image encoded with the same password. </div><p class="pst">Input</p><div class="ptx" lang="en-US">You will be given a number of cases in the input. The first line of input consists of a positive integer indicating the number of test cases to follow. Each test case starts with a line containing n, followed by the quadtree encoding of the test image and the quadtree encoding of the secret image to be decoded. Each quadtree encoding starts with a line containing a positive integer m indicating the number of leaf nodes in the tree. The next m lines are of the form: <br>k intensity <br>which specifies that the node numbered k is a leaf node with the specified intensity as the associated leaf value. Nodes not specified are either internal nodes or absent in the quadtree. You may assume that all intensities are between 0 and 255, inclusively. You may also assume that each quadtree encoding is a valid output obtained from the encoding lgorithm described above. </div><p class="pst">Output</p><div class="ptx" lang="en-US">For each test case, print the case number followed by a blank line. Then, print the intensities of the pixels of the decoded image one row at a time. Print each intensity right-justified in a field of width 4, with no extra spaces between fields. Insert a blank line between cases. </div><p class="pst">Sample Input</p><pre class="sio">2 
+2 
+4 
+1 3 
+2 2 
+3 0 
+4 1 
+4 
+1 23 
+2 123 
+3 253 
+4 40 
+4 
+16 
+5 8 
+6 9 
+7 13 
+8 12 
+9 0 
+10 4 
+11 1 
+12 5 
+13 2 
+14 3 
+15 7 
+16 6 
+17 10 
+18 11 
+19 15 
+20 14 
+7 
+2 10 
+3 20 
+4 30 
+5 41 
+6 42 
+7 44 
+8 43 </pre><p class="pst">Sample Output</p><pre class="sio">Case 1 
+
+ 253  40 
+ 123  23 
+
+Case 2 
+
+  10  10  20  20 
+  10  10  20  20 
+  41  42  30  30 
+  43  44  30  30 </pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=East+Central+North+America+1999">East Central North America 1999</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1086">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1086>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1086">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

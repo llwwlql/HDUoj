@@ -1,0 +1,57 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1479 -- MBone</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1479></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1479&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">MBone</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 107</td><td width="10px"></td><td><b>Accepted:</b> 34</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">MBone is an abbreviation for `Multicast Backbone'. It is the realization of a virtual network built on top of the Internet protocol. In contrast to connection-oriented transmission of data (unicast) and the transmission from a sender to all destinations in a network (broadcast) it provides the multicast facility, a facility to send data to all hosts that have joined a so-called `multicast group'. All members of a group are able to send data to and receive data from the group. <br>Your program is to simulate a simplified version of the MBone. In our setting MBone is a combination of multicast routers and hosts, each host belonging to one of the routers. A router and the hosts that belong to it are called an island. Routers are connected via tunnels which are simple communication channels: data packets sent from one side through the tunnel are received on the other side. <br><br>In order to become a member of a multicast group, a host must send a protocol message to its corresponding multicast router specifying the address of the group it wants to join. As a consequence the host will receive all data packets sent to this group. <br><br>In order to send a data packet to a multicast group, a host sends the packet to the multicast router within its island. Every multicast router duplicates all received packets and sends them through each of its outgoing tunnels. After that it sends copies of the packet to all hosts on its island that have joined the group specified in the packet. <br><br>The distribution range of a packet within MBone is restricted through an integer value called TTL (Time To Live) which is assigned to every packet. If a packet is sent through a tunnel its TTL is decremented by the threshold (an integer value) specified for each tunnel. A packet will not be sent over a tunnel if the TTL of the packet is lower than the threshold of the tunnel. <br><center><img src=images/1479_1.jpg></center></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input to your program will consist of several descriptions of MBone networks. The first part of each description defines the network topology, and the second part describes the activities on this network. The first part starts with a line containing a single integer m (1 < m <= 10), the number of islands in the network. A value of m = 0 indicates the end of input. The following lines contain the descriptions for the m islands. <br><br>Each island description starts with a line containing the name of the multicast router (given as a string of at most 20 non-blank characters) followed by an integer for the number of remaining lines in the island description. These lines can be of two kinds:<br><br>Host belonging to island: H < Host Address > <br><br>Tunnel: T < Threshold > < Dest. Name > <br><br>< Host Address > and < Threshold > are positive integer values specifying the address of the host and the threshold of the tunnel, respectively. < Dest: Name > is the name of the destination router at the other end of the tunnel, which is always different from the current router. <br><br>The first line of the second part contains a single integer of at most 1000 indicating the number of lines in the following activity description. Each one of these lines describes the activity of a host: join a group, leave a group or send a packet to a group. <br><br>Join a group: J < Host Address > < Group Address > <br><br>Leave a group: L < Host Address > < Group Address > <br><br>Send a packet to a group: S < Host Address > < Group Address > < Packet ID > < TTL > <br><br>The < Group Address >, < Packet ID > and < TTL > are positive integer values with the obvious meaning. All names used for the routers and all host addresses used in a scenario, as well as all packet IDs are unique. TTLs of packets will be at most 1000. There will be at most 50 hosts and 100 tunnels in the network and at most 20 active groups (i.e, groups for which there is at least one member host) at any time. No host will try to leave a group that it is not in, nor try to join a group it is in.<br><br></div><p class="pst">Output</p><div class="ptx" lang="en-US">In the output you have to print the packets received by the hosts in the network for each scenario. If hosts receive multiple copies of a packet (routed via different paths), they keep only the copy with the highest TTL (reaching them via the 'shortest' path). <br><br>For each network description, first output the number of the network, as shown in the sample output. Each one of the subsequent lines is of the format < Host Address > < Packet ID > < TTL >, meaning that host < Host Address > received the packet having the ID < Packet ID > with the remaining TTL < TTL >. The three entries of the line should be separated by single blank characters. The output must be sorted in ascending order: first by the host address and second by the packet ID. <br><br>Output a blank line after each test case. <br></div><p class="pst">Sample Input</p><pre class="sio">3
+Nuremberg 3
+T 8 Munich
+H 3768
+H 3669
+Munich 6
+H 721
+H 722
+H 723
+T 6 Nuremberg
+H 857
+T 9 Ulm
+Ulm 5
+H 51225
+H 51226
+H 51227
+T 15 Nuremberg
+T 9 Munich
+14
+J 51227 26
+J 3768 27
+J 723 26
+J 3768 26
+S 3768 26 1000 17
+J 857 26
+S 3768 26 320 16
+J 722 26
+L 857 26
+S 51227 26 1001 37
+S 723 26 533 5
+L 51227 26
+L 3768 27
+L 723 26
+0
+</pre><p class="pst">Sample Output</p><pre class="sio">Network #1
+722 533 5
+722 1001 28
+723 320 8
+723 533 5
+723 1000 9
+723 1001 28
+857 320 8
+3768 320 16
+3768 1000 17
+3768 1001 22
+51227 1000 0
+51227 1001 37
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Southwestern+European+Regional+Contest+1997">Southwestern European Regional Contest 1997</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1479">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1479>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1479">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

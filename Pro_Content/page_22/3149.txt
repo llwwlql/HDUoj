@@ -1,0 +1,53 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>3149 -- Billing Tables</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=3149></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=3149&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Billing Tables</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 6000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 435</td><td width="10px"></td><td><b>Accepted:</b> 103</td></tr><tr><td colspan="3" align="center" style="color:#0ead00"><b>Case Time Limit:</b> 2000MS</td></tr></table></div><p class="pst">Description</p><div class="ptx" lang="en-US"><span lang="en-us"><p>In the world of telecommunications phone calls to different phone numbers have to be charged using different rate or different billing plan. International Carrier of Phone Communications (ICPC) has an antique billing table that determines which phone call has to be charged using which billing plan.</p><p>Each international phone number has 11 digits. The billing table has <i>n</i> lines. Each line specifies a range of prefixes of phone numbers like &ldquo;<code>7919 - 921</code>&rdquo;. This specification means that all phone numbers starting from 7919, 7920, and 7921 match this line. A billing plan name is specified for each prefix. To determine a billing plan for a call, the table is scanned from top to bottom and the first matching line determines the billing plan. If no match is found, the phone number is invalid and no billing plan is needed. A special billing plan named &ldquo;<code>invalid</code>&rdquo; (without quotes) is used as an alternative way to define invalid phone numbers. Some billing plans are used for quite differently looking phone numbers and their names may be specified on different lines in different places of the table.</p><p>ICPC&rsquo;s billing table is old and contains many entries. Some of those entries may not be even used anymore. It is very hard to figure out which phone numbers each billing plan is actually used for. The ICPC&rsquo;s management has reached a decision to transform this billing table into a more legible format. In this new format table consists of the lexicographically ordered list of simple prefixes (without the &ldquo;<code>-</code>&rdquo; range feature of the old format) with a billing plan name for each prefix. No prefix of this new billing table should be a prefix of any other prefix from the table. Thus, a simple dictionary lookup (binary search, for example) will be sufficient to figure out a billing plan for a given phone number. Finding all phone numbers for a given billing plan will also become quite a simple task. The number of lines in the new billing table should be minimized. Billing plan named &ldquo;<code>invalid</code>&rdquo; should not be present in the new billing table at all, since invalid phone numbers will be denoted by absence of the corresponding prefix in the new billing table.</p></span></div><p class="pst">Input</p><div class="ptx" lang="en-US"><span lang="en-us"><p>The first line of the input file contains a single integer number n (1 &le; <i>n</i> &le; 100) &mdash; the number of lines in the old billing table. The following n lines describe the old billing table with one rule on a line. Each rule contains four tokens separated by spaces &mdash; prefix <i>A</i>, minus sign (&ldquo;<code>-</code>&rdquo;), prefix <i>B</i>, and billing plan name. Prefixes contain from 1 to 11 digits each, and the billing plan name contains from 1 to 20 lower case letters.</p><p>Further, let us denote with |<i>A</i>| the number of digits in the prefix <i>A</i>. It is true that 1 &le; |<i>B</i>| &le; |<i>A</i>| &le; 11. Moreover, last |<i>B</i>| digits of prefix <i>A</i> form a string that is lexicographically equal or precedes <i>B</i>. Such pair of prefixes <i>A</i> and <i>B</i> matches all phone numbers with the first |<i>A</i>| &minus; |<i>B</i>| digits matching the first digits of <i>A</i> and with the following |<i>B</i>| digits being lexicographically between the last |<i>B</i>| digits of <i>A</i> and <i>B</i> (inclusive).</p></span></div><p class="pst">Output</p><div class="ptx" lang="en-US"><span lang="en-us"><p>Write to the output file a single integer number <i>k</i> &mdash; the minimal number of lines that the new table should contain to describe the given old billing table. Then write <i>k</i> lines with the lexicographically ordered new billing table. Write two tokens separated by a space on each line &mdash; the prefix and the billing plan name. Note, that the prefix in the new billing table shall contain at least one digit.</p><p>If all phone numbers are invalid (every phone number has no matching line or matches line with billing plan &ldquo;<code>invalid</code>&rdquo;) then the output file should contain just number zero.</p></span></div><p class="pst">Sample Input</p><pre class="sio">8
+7919 - 921 cell
+7921800 - 999 priv
+1 - 1 usa
+760 - 9 rsv
+7928 - 29 rsv
+7600 - 7899 spec
+73 - 77 invalid
+7 - 7 cis</pre><p class="pst">Sample Output</p><pre class="sio">35
+1 usa
+70 cis
+71 cis
+72 cis
+76 rsv
+77 spec
+78 spec
+790 cis
+7910 cis
+7911 cis
+7912 cis
+7913 cis
+7914 cis
+7915 cis
+7916 cis
+7917 cis
+7918 cis
+7919 cell
+7920 cell
+7921 cell
+7922 cis
+7923 cis
+7924 cis
+7925 cis
+7926 cis
+7927 cis
+7928 rsv
+7929 rsv
+793 cis
+794 cis
+795 cis
+796 cis
+797 cis
+798 cis
+799 cis</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Northeastern+Europe+2006">Northeastern Europe 2006</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=3149">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=3149>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=3149">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

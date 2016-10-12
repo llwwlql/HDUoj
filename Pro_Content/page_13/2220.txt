@@ -1,0 +1,42 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2220 -- Treasure Hunters</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2220></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2220&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Treasure Hunters</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 305</td><td width="10px"></td><td><b>Accepted:</b> 182</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">You've been a treasure hunter for a long time. You're pretty good at disarming traps, sneaking past the natives, and generally getting the goods while leaving your skin intact. That stuff doesn't really worry you, but what really raises a sweat is after each expedition there are always very tense arguments about how to split up the loot. You've worked with all kinds of characters and nobody ever agrees on what each piece of treasure is actually worth. You need to come up with a way of splitting the booty as fairly as possible. </div><p class="pst">Input</p><div class="ptx" lang="en-US">Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. <br><br>A single data set has 5 components: <br><ol><li>Start line - A single line, "START" <br><li>Number of Treasures - A single line with a single integer, t, where 1 <= t <= 8, indicating the number of treasures. <br><li>Number of Hunters - A single line with a single integer, h, where 1 <= h <= 6, indicating the number of treasure hunters. <br><li>Treasure Value List - A series of h lines, one for each hunter in sequence (line 1 for hunter 1, line 2 for hunter 2, etc.). Each line contains a space-separated list of estimated treasure values for that hunter. The first estimate on each line is for treasure 1, the second is for treasure 2, etc., and an estimate for each treasure will appear for every hunter. Each estimate will be a positive integer strictly less than 10000. <br><li>End line - A single line, "END" </ol><br></div><p class="pst">Output</p><div class="ptx" lang="en-US">For each input data set, there will be exactly one output set, and there will be exactly one blank line separating output sets. <br><br>Each output set consists of multiple lines, where each line represents a hunter (listed in the same order as the corresponding input data set). Each line contains a list of the treasures given to that hunter followed by the total perceived cash value (by that hunter), of all the treasures they receive. Treasures will be listed in ascending order by treasure number, and all values on each line will be space-separated. <br><br>Treasures will be divided among the hunters in the fairest way possible. The "fairest" way to divide the treasure is defined to be the distribution with the minimum difference between the highest perceived total value and the lowest perceived total value of treasures received by any hunter. In other words, find the distribution that minimizes the difference between the hunter that gets the "most" and the hunter that gets the "least." <br><br>There will not be multiple "fair" distributions. </div><p class="pst">Sample Input</p><pre class="sio">START
+5
+3
+42 500 350 700 100
+250 200 500 1000 75
+150 400 800 800 150
+END
+START
+5
+3
+42 500 350 200 100
+250 200 500 1000 75
+150 400 800 800 150
+END
+START
+5
+3
+500 500 350 200 100
+250 200 500 1000 75
+150 400 800 800 150
+END
+</pre><p class="pst">Sample Output</p><pre class="sio">4 700
+3 5 575
+1 2 550
+
+1 4 5 342
+3 500
+2 400
+
+1 2 1000
+4 1000
+3 5 950
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=South+Central+USA+2001">South Central USA 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2220">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2220>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2220">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

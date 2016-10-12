@@ -1,0 +1,45 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1798 -- Dory's Phonebook</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1798></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1798&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Dory's Phonebook</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 3000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 270</td><td width="10px"></td><td><b>Accepted:</b> 69</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Background<br>Dory suffers from short term memory loss. Telephone numbers are one of the greatest mysteries to her.Whenever she wants to call her friend Marlin she discovers that she can hardly remember his name. Because words are not that hard (she can even speak foreign languages) we should help her in translating phone numbers to words.<br>We want to use a mapping for encoding telephone numbers by words, so that it becomes easier to remember the numbers.<br>Problem<br>The following mapping from letters to digits is given:<br><pre>E JNQ RWX DSY FT AM CIV BKU LOP GHZ<br>e jnq rwx dsy ft am civ bku lop ghz<br>0  1   2   3   4  5  6   7   8   9</pre><br>Your task is writing a program that finds, for a given phone number, all possible encodings by words,and prints them sorted in alphabetical/lexicographical order. A phone number is an arbitrary(!) string of dashes - , slashes / and digits. The dashes and slashes will not be encoded. The words are taken from a dictionary which is given as an ASCII file (one word per line). Every encoding that is possible from this dictionary and that matches the phone number exactly shall be printed. The words in the dictionary contain letters (capital or lowercase), dashes - and double quotes " . For the encoding only the letters are used, but the words must be printed in exactly the form given in the dictionary. Leading non-letters do not occur in the dictionary. Encodings of phone numbers can consist of a single word or of multiple words separated by spaces.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The first line contains the number of scenarios.<br>Every scenario starts with a line containing the number of words in the dictionary. Following are the words in the dictionary, one per line. Next comes the number of phone numbers, which follow then one per line.<br>All words in the dictionary and all phone numbers have at most 50 characters. The number of words in the dictionary is limited to 75000, the number of phone numbers per scenario is less than 1000.</div><p class="pst">Output</p><div class="ptx" lang="en-US">For each scenario first output a line "Scenario #i:" where i is the number of the scenario starting with 1. Then you have to work through the phone numbers in the given order. For every possible encoding, print the phone number followed by a colon, a single(!) space, and the encoding on one line; trailing spaces are not allowed. For one phone number sort the different encodings lexicographically/alphabetically (that means based on the ASCII-values of the characters, so case matters). If there is no encoding for a phone number at all, print the phone number, followed by a single space and the string "cannot be encoded.". Terminate each scenario with a blank line.</div><p class="pst">Sample Input</p><pre class="sio">2
+12
+an
+Bo"
+bo"s
+da
+je
+jemand
+mir
+Mix
+Mixer
+so
+Tor
+Torf
+4
+112
+5624-82
+0721/608-4067
+10/783--5
+5
+jrd
+j
+rd
+jr
+d
+1
+12312312312312312312312312312312312312312312399</pre><p class="pst">Sample Output</p><pre class="sio">Scenario #1:
+112 cannot be encoded.
+5624-82: Mix Tor
+5624-82: mir Tor
+0721/608-4067 cannot be encoded.
+10/783--5: je Bo" da
+
+Scenario #2:
+12312312312312312312312312312312312312312312399 cannot be encoded.
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=TUD+Programming+Contest+2004">TUD Programming Contest 2004</a>, Darmstadt, Germany</div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1798">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1798>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1798">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

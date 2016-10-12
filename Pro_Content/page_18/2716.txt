@@ -1,0 +1,87 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2716 -- Open and Close</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2716></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2716&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Open and Close</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 10000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 476</td><td width="10px"></td><td><b>Accepted:</b> 94</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Morphological operations are tools that are used for extracting image components to represent and describe region shapes. Two common morphological operations are open and close. Before we define these operations, we first have to define how images are represented. <br><br>Given a binary image A with M rows and N columns, we can represent A as a set of the coordinates (r, c) (1 <= r <= M, 1 <= c <= N) such that the pixel at the specified coordinates is 1. The coordinates of the top-left corner are (1, 1). We are also given a binary image B (called the structuring element) with 2S+1 rows and columns. The structuring element can be represented as a set as before, except that (-S,-S) are the coordinates of the pixel at the top-left corner. <br><br>Two operations important in morphological image processing are dilation and erosion. Dilation of an image A by the structuring element B is defined by: <br><br>         A ^ B = { a + b | a in A, b in B } intersect Z<br><br>where the addition of coordinates is defined componentwise, and Z is the set of coordinates (i,j) with 1 <= i <= M and 1 <= j <= N. Similarly, erosion of A by B is defined by: <br><br>         A v B = { w | w + b in A for every b in B }<br><br>With these two operations defined, the opening of A by B is defined by <br><br>         A o B = (A v B) ^ B<br><br>and the closing of A by B is defined by <br><br>         A . B = (A ^ B) v B<br><br>Roughly speaking, the opening operation is used to remove small details while preserving the overall shape. The closing operation is used to fill in gaps while preserving the overall shape. <br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of a number of cases. Each case starts with a line containing the integers M, N, and S separated by spaces (10 <= M, N <= 256, 1 <= S <= 4). The next M lines contain the rows of the image A specified by N characters that are '.' (0) or '*' (1). The next 2S+1 lines specify the structuring element B in a similar manner. The input is terminated by M = N = S = 0. </div><p class="pst">Output</p><div class="ptx" lang="en-US">For each case, print the case number followed by a blank line. Then display the result of A o B followed by a blank line, followed by the result of A . B. The format of the resulting images is the same as those of the input images. Separate the output for different cases by a line consisting of 75 equal signs (=). </div><p class="pst">Sample Input</p><pre class="sio">10 12 1
+............
+..*.........
+.***...***..
+.***...***..
+.*********..
+.**********.
+.*********..
+.***...*.*..
+............
+............
+***
+***
+***
+10 12 1
+............
+..*.........
+.***...***..
+.***...***..
+.*********..
+.**********.
+.*********..
+.***...*.*..
+............
+............
+.*.
+***
+.*.
+0 0 0
+</pre><p class="pst">Sample Output</p><pre class="sio">Case 1
+
+............
+............
+.***...***..
+.***...***..
+.*********..
+.*********..
+.*********..
+.***........
+............
+............
+
+............
+..*.........
+.***...***..
+.***...***..
+.*********..
+.**********.
+.*********..
+.***...***..
+............
+............
+===========================================================================
+Case 2
+
+............
+..*.........
+.***....*...
+.***...***..
+.*********..
+.**********.
+.*********..
+..**...*....
+............
+............
+
+............
+..*.........
+.***...***..
+.****.****..
+.*********..
+.**********.
+.*********..
+.***...*.*..
+............
+............
+
+</pre><p class="pst">Hint</p><div class="ptx" lang="en-US">Huge input and output data,scanf and printf are recommended.</div><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Rocky+Mountain+2005">Rocky Mountain 2005</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2716">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2716>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2716">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

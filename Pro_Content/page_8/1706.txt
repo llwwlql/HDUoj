@@ -1,0 +1,58 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1706 -- References</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1706></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1706&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">References</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 4371</td><td width="10px"></td><td><b>Accepted:</b> 911</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Editors of an electronic magazine make draft versions of the documents in the form of text files. However, publications should meet some requirements, in particular, concerning the rules of reference use. Unfortunately, lots of the draft articles violate some rules. It is desirable to develop a computer program that will make a publication satisfy all the rules from a draft version. <br><br>Let's call a "paragraph" a set of lines in the article going one after another, so that paragraphs are separated by at least one empty line (an "empty line" is a line that containing no characters different from spaces). Any paragraph can contain an arbitrary number of references. A reference is a positive integer not greater than 999 enclosed in square brackets (for example: [23]). There will be no spaces between the brackets and the number. The square brackets are not used in any other context but reference. <br><br>There can be two types of paragraph - "regular" and "reference description". Reference description differs from the regular paragraph because it begins with the reference it describes, for example: <br><br>[23] It is the description ... <br><br>The opening square bracket will be at the first position of the first line of the "reference description" paragraph (i.e. there will be no spaces before it). No reference description paragraph will contain references inside itself. <br><br>Each reference will have exactly one corresponding description and each description will have at least one reference to it. <br><br>To convert a draft version to a publication you have to use the following rules. <br><br><ul><li>References should be renumbered by the successive integer numbers starting from one in the order of their first appearance in the regular paragraphs of the source draft version of the document. <br><li>Reference descriptions should be placed at the end of the article ordered by their number. <br><li>The order of "regular" paragraphs in the document should be preserved. <br><li>Your program should not make any other changes to the paragraphs. </ul><br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input file will be a text file containing a draft article your program should process. All lines will be no more than 80 characters long. Any reference description will contain no more than 3 lines. The input file will contain up to 40000 lines. </div><p class="pst">Output</p><div class="ptx" lang="en-US">The output file contains the result of processing. All paragraphs should be separated by one "true" empty line (i.e. a line that contains no characters at all). There should be no empty lines before the first paragraph. </div><p class="pst">Sample Input</p><pre class="sio">[5] Brownell, D, "Dynamic Reverse Address Resolution Protocol
+    (DRARP)", Work in Progress.
+
+The Reverse Address Resolution Protocol (RARP) [10] (through the
+extensions defined in the Dynamic RARP (DRARP) [5]) explicitly
+addresses the problem of network address discovery, and includes an
+automatic IP address assignment mechanism.
+
+[10] Finlayson, R., Mann, T., Mogul, J., and M. Theimer, "A Reverse
+        Address Resolution Protocol", RFC 903, Stanford, June 1984.
+
+[16] Postel, J., "Internet Control Message Protocol", STD 5, RFC 792,
+        USC/Information Sciences Institute, September 1981.
+
+
+The Trivial File Transfer Protocol (TFTP) [20] provides for transport
+of a boot image from a boot server.  The Internet Control Message
+Protocol (ICMP) [16] provides for informing hosts of additional routers
+via "ICMP redirect" messages.
+
+[20] Sollins, K., "The TFTP Protocol (Revision 2)",  RFC 783, NIC,
+     June 1981.
+
+Works [10], [16] and [20] can be obtained via Internet.
+</pre><p class="pst">Sample Output</p><pre class="sio">The Reverse Address Resolution Protocol (RARP) [1] (through the
+extensions defined in the Dynamic RARP (DRARP) [2]) explicitly
+addresses the problem of network address discovery, and includes an
+automatic IP address assignment mechanism.
+
+The Trivial File Transfer Protocol (TFTP) [3] provides for transport
+of a boot image from a boot server.  The Internet Control Message
+Protocol (ICMP) [4] provides for informing hosts of additional routers
+via "ICMP redirect" messages.
+
+Works [1], [4] and [3] can be obtained via Internet.
+
+[1] Finlayson, R., Mann, T., Mogul, J., and M. Theimer, "A Reverse
+        Address Resolution Protocol", RFC 903, Stanford, June 1984.
+
+[2] Brownell, D, "Dynamic Reverse Address Resolution Protocol
+    (DRARP)", Work in Progress.
+
+[3] Sollins, K., "The TFTP Protocol (Revision 2)",  RFC 783, NIC,
+     June 1981.
+
+[4] Postel, J., "Internet Control Message Protocol", STD 5, RFC 792,
+        USC/Information Sciences Institute, September 1981.
+
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Northeastern+Europe+1997">Northeastern Europe 1997</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1706">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1706>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1706">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

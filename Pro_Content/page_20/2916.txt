@@ -1,0 +1,87 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2916 -- The Wolves and the Sheep Plus</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2916></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2916&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">The Wolves and the Sheep Plus</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 60000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 393216K</td></tr><tr><td><b>Total Submissions:</b> 189</td><td width="10px"></td><td><b>Accepted:</b> 38</td></tr><tr><td colspan="3" align="center" style="color:#0ead00"><b>Case Time Limit:</b> 20000MS</td></tr></table></div><p class="pst">Description</p><div class="ptx" lang="en-US"><span lang="en-us"><p>Nalim, Ocis and Remmarguts are playing on grass, and they feel very hungry now. As baby wolves, they decide to capture a little sheep to eat. Fortunately, they immediately discover a sheep roaming around the grass. However, what they found is the queen of the sheep &mdash; Mmxl, who has extraordinary speed that can compare with the wolves, and is very clever! Can you judge whether the baby wolves will capture Mmxl? If so, how much time do they need? </p><p>There are some rules to follow:</p><p>The grass field is a rectangular area that consists of <i>N</i> &times; <i>M</i> grids. And some obstacles like stones or trees exist. The actions of the baby wolves and Mmxl are taken in rounds. In each round, baby wolves take actions first, and then Mmxl follows. In the baby wolves' turn, the three wolves will make a decision, and choose one of them to move (a move means moving from a grid to a neighboring grid). There must be a wolf to move, unless none of them can move. In the Mmxl&rsquo;s turn, she will always move. If she cannot move, she is captured. Baby wolves and Mmxl cannot move to the grids on which there are obstacles, and they are always on different grids. Baby wolves and Mmxl will never get out of the rectangular area. Notice that the sheep is captured only when she cannot move in her turn. </p><p>These little animals are very clever. If the wolves have a way to capture the sheep, they never miss the way. If the sheep is able to prevent being captured, she never make a mistake. Additionally, the wolves eager to capture the sheep as early as possible, and the sheep will try to delay the time being captured even if she cannot escape.</p></span></div><p class="pst">Input</p><div class="ptx" lang="en-US"><span lang="en-us"><p>Input contains multiple test cases. Each test case starts with two numbers <i>N</i> and <i>M</i> (1 &le; <i>N</i>, <i>M</i> &le; 10) in one line. Then <i>N</i> lines follow, each line has <i>M</i> characters, which describes the grass field. A &lsquo;<tt>.</tt>&rsquo; denotes an empty grid, an &lsquo;<tt>#</tt>&rsquo; denotes an obstacle, a &lsquo;<tt>O</tt>&rsquo; denotes a baby wolf, and a &lsquo;<tt>X</tt>&rsquo; denotes the Mmxl. There are exactly three &lsquo;<tt>O</tt>&rsquo;&rsquo;s and one &lsquo;<tt>X</tt>&rsquo;.</p></span></div><p class="pst">Output</p><div class="ptx" lang="en-US"><span lang="en-us"><p>There is only one line for each test case. If lovely Mmxl will not be captured in finity rounds, print &ldquo;<tt>Lucky Mmxl will never be captured:)</tt>&rdquo;. If the wicked baby wolves are able to capture Mmxl, print &ldquo;<tt>Poor Mmxl may be captured after </tt><i>xx</i><tt> steps:(</tt>&rdquo; where <i>xx</i> is the number of turns after which the wolves can capture the sheep, which is certainly an odd number.</p></span></div><p class="pst">Sample Input</p><pre class="sio">2 2
+OO
+OX
+3 3
+OOO
+##X
+...
+3 3
+OO#
+###
+.OX
+3 4
+OO##
+####
+..OX
+4 4
+OOO.
+....
+....
+...X
+5 5
+O...O
+.....
+..#..
+.....
+O...X
+5 5
+O...O
+.....
+...#.
+.....
+O...X
+6 6
+......
+.O..O.
+..##..
+..##..
+.O..X.
+......
+6 6
+#.....
+.O..O.
+..##..
+..##..
+.O..X.
+......
+10 10
+..........
+..........
+..O....O..
+..........
+..........
+..........
+..........
+..O....X..
+..........
+..........
+10 10
+..........
+.#.#.#.#.#
+..O.....O.
+.#.#.#.#.#
+..........
+.#.#.#.#.#
+..........
+.#.#.#.#.#
+..O.....X.
+.#.#.#.#.#</pre><p class="pst">Sample Output</p><pre class="sio">Poor Mmxl may be captured after 1 steps:(
+Poor Mmxl may be captured after 7 steps:(
+Poor Mmxl may be captured after 5 steps:(
+Lucky Mmxl will never be captured:)
+Poor Mmxl may be captured after 21 steps:(
+Lucky Mmxl will never be captured:)
+Poor Mmxl may be captured after 41 steps:(
+Lucky Mmxl will never be captured:)
+Poor Mmxl may be captured after 39 steps:(
+Lucky Mmxl will never be captured:)
+Poor Mmxl may be captured after 51 steps:(</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Baidu+Star+2006+Semifinal">Baidu Star 2006 Semifinal</a><br>Chen, Shixi (xreborner) living in http://fairyair.yeah.net/</div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2916">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2916>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2916">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

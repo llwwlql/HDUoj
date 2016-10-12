@@ -1,0 +1,82 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1858 -- Interesting Maze Game</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1858></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1858&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Interesting Maze Game</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 307</td><td width="10px"></td><td><b>Accepted:</b> 96</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">The Police President has recently bought a new game -- the famous Ravensburger's aMAZEing Labyrinth. Now, he is really keen on it, he spends any free time playing this game. While we want the Police President during the Summit to perform much more important decisions, we need a program that would substitute him in playing the game. <br><br>The game is played on the field of 7 * 7 squares with equal-sized cards lying on each square. Various path patterns are drawn on the cards, these paths join arbitrary subset of the four edges of a single square. The patterns can form longer paths leading through the whole game field. When following these paths, it is possible to move from a square to its neighbouring square, if both squares contain the path pattern leading to their common edge. It is impossible to travel between squares diagonally. See the picture for a better idea about the game appearance. <br><center><img src=images/1858_1.jpg></center><br>In the beginning of the move, the player has one game piece on some of the square cards and his/her goal is to move the piece to some other square card (target) following the valid paths. Before the walk, the player alters the maze state by inserting one extra square card into it. <br>The extra card can only be inserted to the position at the field margin. The insertion causes the whole row or column of cards to be shifted one position further, which makes another card to fall out at the other end of the game field. (This card becomes a new extra card for the next move, but we will care of a single move only in this problem.) <br>Since the cards with both coordinates odd are stuck firmly to the playing desk, only the even rows and columns can be shifted. Thus, the extra card can be inserted into an even row or column only. If we number rows and columns with numbers 1 to 7, there are 12 possible positions where the new card can be inserted: (1,2), (1,4), (1,6), (7,2), (7,4), (7,6), (2,1), (4,1), (6,1), (2,7), (4,7), and (6,7). For instance, insertion into the position (7,6) causes the following shift: <br><center>(7,6) -> (6,6) -> (5,6) -> (4,6) -> (3,6) -> (2,6) -> (1,6) </center><br>The extra card comes to the position (7,6) and the card formerly being at the position (1,6) is removed from the game field for the rest of the move. <br>Before insertion, the extra card can be rotated to any of the four possible directions. No other card in the game can be rotated. This makes the total maximal number of 48 possible moves (if the extra card is asymmetric). <br><br>Another important rule considers the case when the target card or the card with the player's piece appears in the row or column being shifted. In such case, the position of the piece or the target is shifted too. This makes it possible to move the target to some more appropriate place. <br><br>Note that if the target is shifted away from the game (the target card falls out from the game), it is no more possible to reach it in the same move -- the piece cannot leave the game field. On the other hand, if the game piece is located on the card which is moved away from the game field, the piece position is "wrapped" to the opposite end of the field, i.e., to the just inserted card. <br><br>Therefore, a valid move consists of two parts: insertion of the extra card into the game (this action must always be made) and walking the path of an arbitrary length (including zero, i.e., staying on the same square). Your task is to determine, whether it is possible to reach the target in a single move. In other words, if it is possible to insert the extra card into the game and then to walk to the target position. <br><br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of several game descriptions. The first line of each description contains four integer numbers R1, C1, R2, and C2separated with a space, 1 <= R1, C1, R2, C2 <= 7. (R1,C1) is the position (row and column) of the game piece, (R2,C2) is the position of the target. Note that these positions can sometimes be shifted during the move, as specified above. After these numbers, there is one blank line. <br><br>The next three lines describe the first row of the game field. Each of these lines contains 27 characters: three for the card in the first column, one space, three characters for the card in the second column, etc. Thus, every card is represented by a square of nine (3 * 3) characters. The middle one of these nine characters is always capital letter "O". The four characters in the corners are always dots ("."). The both left and right characters are either a dot (".") or a dash ("-"). Dashes mean the path pattern leading to the left or right edge. The top and bottom characters are either a dot or a pipe ("|"). The pipe means the path pattern leading to the corresponding edge. <br><br>After the first row, there is one blank line and three other lines describing the second row. Then follow one other blank line and three lines for the third row, etc. After the seventh row, there is a blank line and three other lines containing exactly three characters each. This is the description of the extra card, given in the same way as the cards in the field. <br><br>The input is terminated by a line containing four zeros instead of piece and target coordinates.<br></div><p class="pst">Output</p><div class="ptx" lang="en-US">For each game, output a single line. If it is possible to insert the extra card in such a way that there is a path from the game piece to the target, print the sentence "You can win in one move.". Otherwise, print the sentence "Bad luck!". </div><p class="pst">Sample Input</p><pre class="sio">1 1 7 7
+
+... ... ... .|. ... ... ...
+-O- -O- -O- .O. -O- -O- -O.
+... ... ... .|. ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... ...
+
+.|.
+.O.
+.|.
+
+1 1 7 7
+
+... ... ... ... ... ... ...
+-O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... .|.
+
+... ... ... ... ... ... .|.
+.O- -O- -O- -O- -O- -O- -O.
+.|. ... ... ... ... ... ...
+
+.|. ... ... ... ... ... ...
+.O- -O- -O- -O- -O- -O- -O.
+... ... ... ... ... ... ...
+
+...
+.O-
+.|.
+
+0 0 0 0
+
+</pre><p class="pst">Sample Output</p><pre class="sio">You can win in one move.
+Bad luck!
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=CTU+Open+2002">CTU Open 2002</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1858">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1858>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1858">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

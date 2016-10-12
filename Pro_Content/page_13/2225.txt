@@ -1,0 +1,60 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2225 -- Asteroids!</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2225></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2225&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Asteroids!</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 3328</td><td width="10px"></td><td><b>Accepted:</b> 1237</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">You're in space.<br>You want to get home.<br>There are asteroids.<br>You don't want to hit them. </div><p class="pst">Input</p><div class="ptx" lang="en-US">Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. <br><br>A single data set has 5 components: <br><ol><li>Start line - A single line, "START N", where 1 <= N <= 10. <br><li>Slice list - A series of N slices. Each slice is an N x N matrix representing a horizontal slice through the asteroid field. Each position in the matrix will be one of two values: <br><ul>'O' - (the letter "oh") Empty space<br>'X' - (upper-case) Asteroid present </ul><br><li>Starting Position - A single line, "A B C", denoting the [A,B,C] coordinates of your craft's starting position. The coordinate values will be integers separated by individual spaces. <br><li>Target Position - A single line, "D E F", denoting the [D,E,F] coordinates of your target's position. The coordinate values will be integers separated by individual spaces. <br><li>End line - A single line, "END" </ol><br>The origin of the coordinate system is [0,0,0]. Therefore, each component of each coordinate vector will be an integer between 0 and N-1, inclusive. <br><br>The first coordinate in a set indicates the column. Left column = 0.<br>The second coordinate in a set indicates the row. Top row = 0.<br>The third coordinate in a set indicates the slice. First slice = 0. <br><br>Both the Starting Position and the Target Position will be in empty space. <br><br></div><p class="pst">Output</p><div class="ptx" lang="en-US">For each data set, there will be exactly one output set, and there will be no blank lines separating output sets. <br><br>A single output set consists of a single line. If a route exists, the line will be in the format "X Y", where X is the same as N from the corresponding input data set and Y is the least number of moves necessary to get your ship from the starting position to the target position. If there is no route from the starting position to the target position, the line will be "NO ROUTE" instead. <br><br>A move can only be in one of the six basic directions: up, down, left, right, forward, back. Phrased more precisely, a move will either increment or decrement a single component of your current position vector by 1. <br></div><p class="pst">Sample Input</p><pre class="sio">START 1
+O
+0 0 0
+0 0 0
+END
+START 3
+XXX
+XXX
+XXX
+OOO
+OOO
+OOO
+XXX
+XXX
+XXX
+0 0 1
+2 2 1
+END
+START 5
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+XXXXX
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+OOOOO
+0 0 0
+4 4 4
+END
+</pre><p class="pst">Sample Output</p><pre class="sio">1 0
+3 4
+NO ROUTE
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=South+Central+USA+2001">South Central USA 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2225">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2225>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2225">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

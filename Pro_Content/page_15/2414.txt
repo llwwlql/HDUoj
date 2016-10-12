@@ -1,0 +1,53 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2414 -- Phylogenetic Trees Inherited</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2414></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2414&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Phylogenetic Trees Inherited</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 3000MS</td><td width="10px"></td><td colspan="3"><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 504</td><td width="10px"></td><td><b>Accepted:</b> 314</td><td width="10px"></td><td style="font-weight:bold; color:red;">Special Judge</td></tr></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Among other things, Computational Molecular Biology deals with processing genetic sequences. Considering the evolutionary relationship of two sequences, we can say that they are closely related if they do not differ very much. We might represent the relationship by a tree, putting sequences from ancestors above sequences from their descendants. Such trees are called phylogenetic trees. <br>Whereas one task of phylogenetics is to infer a tree from given sequences, we'll simplify things a bit and provide a tree structure - this will be a complete binary tree. You'll be given the n leaves of the tree. Sure you know, n is always a power of 2. Each leaf is a sequence of amino acids (designated by the one-character-codes you can see in the figure). All sequences will be of equal length l. Your task is to derive the sequence of a common ancestor with minimal costs.<br><CENTER><TABLE><TBODY><TR><TD><TABLE border=1><TBODY><TR><TD>Amino Acid</TD><TD></TD><TD></TD></TR><TR><TD>Alanine</TD><TD>Ala</TD><TD>A</TD></TR><TR><TD>Arginine</TD><TD>Arg</TD><TD>R</TD></TR><TR><TD>Asparagine</TD><TD>Asn</TD><TD>N</TD></TR><TR><TD>Aspartic Acid</TD><TD>Asp</TD><TD>D</TD></TR><TR><TD>Cysteine</TD><TD>Cys</TD><TD>C</TD></TR><TR><TD>Glutamine</TD><TD>Gln</TD><TD>Q</TD></TR><TR><TD>Glutamic Acid</TD><TD>Glu</TD><TD>E</TD></TR><TR><TD>Glycine</TD><TD>Gly</TD><TD>G</TD></TR><TR><TD>Histidine</TD><TD>His</TD><TD>H</TD></TR><TR><TD>Isoleucine</TD><TD>Ile</TD><TD>I</TD></TR></TBODY></TABLE></TD><TD width="30%"></TD><TD><TABLE border=1><TBODY><TR><TD>Amino Acid</TD><TD></TD><TD></TD></TR><TR><TD>Leucine</TD><TD>Leu</TD><TD>L</TD></TR><TR><TD>Lysine</TD><TD>Lys</TD><TD>K</TD></TR><TR><TD>Methionine</TD><TD>Met</TD><TD>M</TD></TR><TR><TD>Phenylalanine</TD><TD>Phe</TD><TD>F</TD></TR><TR><TD>Proline</TD><TD>Pro</TD><TD>P</TD></TR><TR><TD>Serine</TD><TD>Ser</TD><TD>S</TD></TR><TR><TD>Threonine</TD><TD>Thr</TD><TD>T</TD></TR><TR><TD>Tryptophan</TD><TD>Trp</TD><TD>W</TD></TR><TR><TD>Tyrosine</TD><TD>Tyr</TD><TD>Y</TD></TR><TR><TD>Valine</TD><TD>Val</TD><TD>V</TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></CENTER><br>The costs are determined as follows: every inner node of the tree is marked with a sequence of length l, the cost of an edge of the tree is the number of positions at which the two sequences at the ends of the edge differ, the total cost is the sum of the costs at all edges. The sequence of a common ancestor of all sequences is then found at the root of the tree. An optimal common ancestor is a common ancestor with minimal total costs. </div><p class="pst">Input</p><div class="ptx" lang="en-US">The input file contains several test cases. Each test case starts with two integers n and l, denoting the number of sequences at the leaves and their length, respectively. Input is terminated by n=l=0. Otherwise, 1<=n<=1024 and 1<=l<=1000. Then follow n words of length l over the amino acid alphabet. They represent the leaves of a complete binary tree, from left to right.</div><p class="pst">Output</p><div class="ptx" lang="en-US">For each test case, output a line containing some optimal common ancestor and the minimal total costs.</div><p class="pst">Sample Input</p><pre class="sio">4 3
+AAG
+AAA
+GGA
+AGA
+
+4 3
+AAG
+AGA
+AAA
+GGA
+
+4 3
+AAG
+GGA
+AAA
+AGA
+
+4 1
+A
+R
+A
+R
+
+2 1
+W
+W
+
+2 1
+W
+Y
+
+1 1
+Q
+
+0 0
+</pre><p class="pst">Sample Output</p><pre class="sio">AGA 3
+AGA 4
+AGA 4
+R 2
+W 0
+Y 1
+Q 0
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Ulm+Local+2000">Ulm Local 2000</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2414">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2414>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2414">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

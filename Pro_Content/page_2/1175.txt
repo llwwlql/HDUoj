@@ -1,0 +1,40 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1175 -- Starry Night</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1175></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1175&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Starry Night</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 1742</td><td width="10px"></td><td><b>Accepted:</b> 662</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">High up in the night sky, the shining stars appear in clusters of various shapes. A cluster is a non-empty group of neighbouring stars, adjacent in horizontal, vertical or diagonal direction. A cluster cannot be a part of a larger cluster.<br><br>Clusters may be similar. Two clusters are similar if they have the same shape and number of stars, irrespective of their orientation. In general, the number of possible orientations for a cluster is eight, as Figure 1 exemplifies.<br><center><img src=images/1175_1.jpg></center><br>The night sky is represented by a sky map, which is a two-dimensional matrix of 0's and 1's. A cell contains the digit 1 if it has a star, and the digit 0 otherwise.<br><br>Given a sky map, mark all the clusters with lower case letters. Similar clusters must be marked with the same letter; non-similar clusters must be marked with different letters. You mark a cluster with a lower case letter by replacing every 1 in the cluster by that lower case letter. The order of allocation of letters depends on the first appearance of different clusters, from top to bottom and from left to right.<br></div><p class="pst">Input</p><div class="ptx" lang="en-US">Your program is to read from standard input. The first two lines contain, respectively, the width W and the height H of a sky map. The sky map is given in the following H lines, of W characters each.<br><br>0 <= W (width of the sky map) <= 100<br>0 <= H (height of the sky map) <= 100<br>0 <= Number of clusters <= 500<br>0 <= Number of non-similar clusters <= 26 (a..z)<br>1 <= Number of stars per cluster <= 160</div><p class="pst">Output</p><div class="ptx" lang="en-US">Your program is to write to standard output. The output contains the same map as the input, except that the clusters are marked as described above.</div><p class="pst">Sample Input</p><pre class="sio">23
+15
+10001000000000010000000
+01111100011111000101101
+01000000010001000111111
+00000000010101000101111
+00000111010001000000000
+00001001011111000000000
+10000001000000000000000
+00101000000111110010000
+00001000000100010011111
+00000001110101010100010
+00000100110100010000000
+00010001110111110000000
+00100001110000000100000
+00001000100001000100101
+00000001110001000111000</pre><p class="pst">Sample Output</p><pre class="sio">a000a0000000000b0000000
+0aaaaa000ccccc000d0dd0d
+0a0000000c000c000dddddd
+000000000c0b0c000d0dddd
+00000eee0c000c000000000
+0000e00e0ccccc000000000
+b000000e000000000000000
+00b0f000000ccccc00a0000
+0000f000000c000c00aaaaa
+0000000ddd0c0b0c0a000a0
+00000b00dd0c000c0000000
+000g000ddd0ccccc0000000
+00g0000ddd0000000e00000
+0000b000d0000f000e00e0b
+0000000ddd000f000eee000</pre><p class="pst">Hint</p><div class="ptx" lang="en-US">Just to make it clearer, notice that this sample input  corresponds to the following picture of the sky.<br><center><img src=images/1175_2.jpg></center><br>Notice that this sample output corresponds to the following picture.<br><center><img src=images/1175_3.jpg></center></div><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=IOI+1998">IOI 1998</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1175">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1175>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1175">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1219 -- L-I-N-G-O: LINGO</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1219></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1219&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">L-I-N-G-O: LINGO</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 1065</td><td width="10px"></td><td><b>Accepted:</b> 234</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">A new TV game show requires contestants to deduce a five letter word based on hints obtained by guessing other five letter words. The way the game is played is as follows: a secret five letter word is selected by the production staff of the game show. The object of the game is for the contestant to guess the secret word. The first letter of the secret word is revealed. The contestant will then guess a five letter word that may match the secret word. A computer then provides feedback to the contestant on the accuracy of the guess. Feedback consists of a report indicating if any letters in the guessed word are correct and in the same position in the secret word, if any letters in the guessed word are correct but not in the correct position in the secret word, and any letters in the guessed word that do not appear in the secret word.<br><br>As an example, the production staff chooses the secret word: "HELLO". The contestant is told the first letter of the word is "H". The contestant then guesses what the word could be, knowing it begins with the letter "H". Let's say the contestant guesses the word: "HOLES". The game show computer would report that the "H" and "L" are in the secret word and in the correct position. In addition, the "O" and "E" are in the secret word, but in the incorrect position, and the "S" is not in the secret word. This is conveyed to the contestant by a single line report:<br>HoLe.<br><br>The upper case letters ("H" and "L") indicate correct letter and position. The lower case letters ("o" and "e") indicate correct letter, wrong position. The period (".") indicates a wrong letter (not in the secret word).<br><br>You will write a program that evaluates the contestant guesses, and prints out the single line report for each guess.If the contestant guesses the secret word exactly, then the five capital letters of the secret word will be displayed in the report.<br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input data file consists of datasets for one or more games. A blank line marks the beginning of the next dataset (game). The line after the blank line contains the secret word. The remaining lines in the dataset represent the contestant's guesses; there may be too few or too many guesses than are necessary to guess the secret word. The secret word will contain exactly five upper case letters. The contestant抯 guesses, however, have to be checked for validity: valid guesses consist of exactly five upper case letters. Input is terminated by a dataset with the secret word: "LINGO" (that is, game play is stopped at that point, the program terminates, and no further guessing occurs).<br></div><p class="pst">Output</p><div class="ptx" lang="en-US">Each game's output should be preceded by a single blank line (except for the terminating case). The first single line status report should be printed, which consists of the first letter of the secret word, followed by four periods. For each guess, print the single line status report for that guess. For an invalid guess, repeat the previous single line status report. If the guess exactly matches the secret word, that game ends and you should move on to the next one.The contestant may guess a maximum of six times; after the sixth guess, if the contestant did not guess the secret word, or you run out of guesses (the contestant gives up) print out the secret word in lower case letters and move on to the next game.<br></div><p class="pst">Sample Input</p><pre class="sio">
+HELLO
+HOLES
+HAPPY
+HELMS
+HELLO
+HELPS
+
+PARTY
+PARKS
+PARES
+PARIS
+PONDER
+PATTY
+PUNTS
+PARTY
+
+HELIX
+HeLIX
+HELIX
+
+LINGO</pre><p class="pst">Sample Output</p><pre class="sio">
+H....
+HoLe.
+H....
+HEL..
+HELLO
+
+P....
+PAR..
+PAR..
+PAR..
+PAR..
+PA.TY
+party
+
+H....
+H....
+HELIX</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Greater+New+York+2002">Greater New York 2002</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1219">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1219>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1219">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

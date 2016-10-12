@@ -1,0 +1,109 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1115 -- Statistical Trouble</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1115></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1115&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Statistical Trouble</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td colspan="3"><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 250</td><td width="10px"></td><td><b>Accepted:</b> 90</td><td width="10px"></td><td style="font-weight:bold; color:red;">Special Judge</td></tr></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Your team was hired by the international corporation ACM (Analytical Calculation Maxims). Every year ACM creates and conducts various surveys. Surveys themselves are simple forms with a list of questions and a list of possible answers for every question. Surveys are distributed around the globe, where field agents question the target group of people. All the answers are gathered in the ICPC (International Computation and Processing Center), where teams of well-paid analysts mine raw data in search for relevant correlations. The raw data for each individual survey consists of lots of lines of answers. Each line corresponds to every questioned person and for every question lists answers that the person has made on that particular survey.<br><br>The first step of analysis that your team was hired to automate is to create cross tables that correlate answers on interesting pairs of questions. In its most simple way, given a pair of questions, cross table has a row for every possible answer on the first question, and has a column for every possible answer on the second question. Each cell of the cross table contains a number of lines in the raw data that has both answers for the corresponding questions at the same time.<br><br>However, your task is complicated by the fact that you are to compute and output not only simple cross table values, but also total values for every row and column in the cross table (that is the sum of values in the corresponding row and column) that are placed in an additional last column and last row, as well as a percentage distributions for every row and column. Percentage distribution for a row is an additional number in every cell in that row that shows percent ratio of the value in that cell to the total value for that row, unless the total value is zero (in that case percentage distribution for this row is not defined). The same applies to the percentage distributions of columns. Thus, the cross table in your output will have at most three values in every cell (the value itself, row-wise percent, and column-wise percent). Please note, that percentage distributions also apply to totals. For example, in the total column for every row the row-wise percent will be always 100%, unless the total value for the row is zero (in that case row-wise percents are not defined), and column -wise percent shows percents ratio of the total value for this row to the total number of lines in the raw data (which is the value that can be found in the last column of the last row).<br><br>Percents are rounded to integers on output. Percent that has a non-zero fractional part is rounded to either the smallest integer number greater than the resulting percent, or the largest integer number smaller than the resulting percent, in such a way, that the sums of all corresponding row-wise percents by row (without row totals) or column -wise percents by column (without column totals) are equal to 100% unless they are undefined. There are various rounding algorithms that produce results satisfying the above constraints. You are free to use any rounding algorithm as long as the above constraints are satisfied.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of 3 sections: survey description, survey results, and cross table descriptions.<br><br>The first line of the input contains the name of the survey, which is at most 100 characters long. Subsequent lines describe all the questions in the survey. On the first line of every question there is a 3-character question code (capital letters and digits only) followed by a space, and followed by the question name, which is at most 80 characters long. Each subsequent line for a question describes one possible answer on the question and starts with a space, followed by a single-character code for the answer (capital letter, digit, or character '.', '*', or '@'), followed by a space and followed by an answer description, which is at most 40 characters long. The list of questions is terminated by the line with a single character '#'. All answer codes are unique within the question, and all question codes are unique within the input file. There are at least 2 and at most 10 possible answers per question and at least 2 and at most 100 questions.<br><br>Next lines in the input file describe survey results. Every line contains a character per question (in the order they appear in the input file) that gives the answer code for the corresponding question. The characters follow one another without any delimiters. This section is terminated by the line with a single character '#'. There is at least one line with answers in the section and at most 10000 answers in total (the number of lines times the number of questions).<br><br>Next lines in the input  describe cross tables that are to be created. Each cross table description occupies one line. That line contains the code for the first question, followed by a space, followed by the different code for the second question, followed by a space, and followed by the cross table name, which is at most 100 characters long. This section is terminated by the line with a single character '#'. There are at most 100 cross table descriptions in the input file.<br><br>The input has no trailing spaces on any line. All names do not start or end with a space, but may contain spaces.<br></div><p class="pst">Output</p><div class="ptx" lang="en-US">Write to the output  a cross table for every cross table description in the input file in the order they appear in the input file. On the first line of the cross table write the survey name, followed by a space, followed by a '-' (dash) character, followed by a space, followed by the cross table name. Then write the description of the first question, and the description of the second question exactly as they appear in the input file and in the same format. Then write an empty line, followed by the table itself.<br><br>The table contains exactly 1+3*(N1+1) lines and exactly 6*(N2+2) characters on every line, where N1 is the number of possible answers for the first question, and N2 is the number of possible answers for the second question. The table has one line for column headings, and N1+1 rows (3 lines per row). The first N1 of these rows correspond to the answers on the first question in the order they appear in the input file, and the last row is for column totals. The table also has N2+2 columns, where each column is 6 characters wide. The first column is for row headings; the subsequent N2 columns correspond to the answers on the second question in the order they appear in the input file, and the last column is for row totals. All information in the cells (including headings) is aligned to the right and is padded on the left with spaces to become 6 characters wide.<br><br>The heading for the first column is empty. The headings for the subsequent N2 columns are composed from the second question code, followed by a ':' (colon) character, and followed by the corresponding answer code. The heading for the last column is the string "TOTAL" (without quotes). The headings for the first N1 3-line rows of the cross table are composed from the first question code, followed by a ':' (colon) character, and followed by the corresponding answer code. The heading for the last row is the string "TOTAL" (without quotes). Row headings are situated on the first line of the corresponding row. The subsequent 2 lines in the heading column of every row must be blank.<br><br>All non-heading cells in the table contain computed values and percents. On the first line of every cell the corresponding cross table integer value is situated. The second line contains properly rounded to integers row-wise percent, with a mandatory trailing '%' (percent) character, or a single '-' (dash) character if the corresponding row-wise percent is not defined. The third line contains column -wise percent in the same format. All cross tables in the output file must be separated by a single empty line.<br></div><p class="pst">Sample Input</p><pre class="sio">New Year Phone Survey for ACM ICPC
+Q01 Hello!
+ H Hello!
+ Y Yes!
+ * Uhm...
+ . (silence)
+ @ (other)
+Q02 How are you?
+ H Hello!
+ Y Yes!
+ F Fine!
+ Q Who are you?
+ @ (other)
+BYE Happy New Year!
+ Y You too.
+ * (censored)
+ @ (other)
+ . (hang up)
+#
+.@.
+HH@
+.@.
+YFY
+HQ*
+H@.
+YYY
+.H@
+HFY
+HH@
+#
+Q01 Q02 Health vs greeting style
+Q02 BYE Politeness matrix
+#
+</pre><p class="pst">Sample Output</p><pre class="sio">New Year Phone Survey for ACM ICPC - Health vs greeting style
+Q01 Hello!
+ H Hello!
+ Y Yes!
+ * Uhm...
+ . (silence)
+ @ (other)
+Q02 How are you?
+ H Hello!
+ Y Yes!
+ F Fine!
+ Q Who are you?
+ @ (other)
+
+       Q02:H Q02:Y Q02:F Q02:Q Q02:@ TOTAL
+ Q01:H     2     0     1     1     1     5
+         40%    0%   20%   20%   20%  100%
+         66%    0%   50%  100%   33%   50%
+ Q01:Y     0     1     1     0     0     2
+          0%   50%   50%    0%    0%  100%
+          0%  100%   50%    0%    0%   20%
+ Q01:*     0     0     0     0     0     0
+           -     -     -     -     -     -
+          0%    0%    0%    0%    0%    0%
+ Q01:.     1     0     0     0     2     3
+         33%    0%    0%    0%   67%  100%
+         34%    0%    0%    0%   67%   30%
+ Q01:@     0     0     0     0     0     0
+           -     -     -     -     -     -
+          0%    0%    0%    0%    0%    0%
+ TOTAL     3     1     2     1     3    10
+         30%   10%   20%   10%   30%  100%
+        100%  100%  100%  100%  100%  100%
+
+New Year Phone Survey for ACM ICPC - Politeness matrix
+Q02 How are you?
+ H Hello!
+ Y Yes!
+ F Fine!
+ Q Who are you?
+ @ (other)
+BYE Happy New Year!
+ Y You too.
+ * (censored)
+ @ (other)
+ . (hang up)
+
+       BYE:Y BYE:* BYE:@ BYE:. TOTAL
+ Q02:H     0     0     3     0     3
+          0%    0%  100%    0%  100%
+          0%    0%  100%    0%   30%
+ Q02:Y     1     0     0     0     1
+        100%    0%    0%    0%  100%
+         33%    0%    0%    0%   10%
+ Q02:F     2     0     0     0     2
+        100%    0%    0%    0%  100%
+         67%    0%    0%    0%   20%
+ Q02:Q     0     1     0     0     1
+          0%  100%    0%    0%  100%
+          0%  100%    0%    0%   10%
+ Q02:@     0     0     0     3     3
+          0%    0%    0%  100%  100%
+          0%    0%    0%  100%   30%
+ TOTAL     3     1     3     3    10
+         30%   10%   30%   30%  100%
+        100%  100%  100%  100%  100%
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Northeastern+Europe+2001">Northeastern Europe 2001</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1115">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1115>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1115">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

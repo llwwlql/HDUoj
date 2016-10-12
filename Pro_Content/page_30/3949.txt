@@ -1,0 +1,78 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>3949 -- Zigzag</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=3949></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=3949&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Zigzag</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 5000MS</td><td width="10px"></td><td colspan="3"><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 46</td><td width="10px"></td><td><b>Accepted:</b> 16</td><td width="10px"></td><td style="font-weight:bold; color:red;">Special Judge</td></tr></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Given several points on a plane, let’s try to solve a puzzle connecting them with a zigzag line. The puzzle is to find the zigzag line that passes through all the given points with the minimum number of turns. Moreover, when there are several zigzag lines with the minimum number of turns, the shortest one among them should be found.<br>For example, consider nine points given in Figure 10.<br><br><center><img src="images/3949_1.png"></center><br><br>A zigzag line is composed of several straight line segments. Here, the rule requests that each line segment should pass through two or more given points.<br>A zigzag line may turn at some of the given points or anywhere else. There may be some given points passed more than once.<br><br><center><img src="images/3949_2.png"></center><br><br>Two zigzag lines with three turning points are depicted in Figure 11 (a) and (b) for the same set of given points shown in Figure 10. The length of the zigzag line in Figure 11 (a) is shorter than that in Figure 11 (b). In fact, the length of the zigzag line in Figure 11 (a) is the shortest so that it is the solution for the nine points given in Figure 10.<br>Another zigzag line with four turning points is depicted in Figure 12. Its length is shorter than those in Figure 11, however, the number of turning points is greater than those in Figure 11, and thus, it is not the solution.<br><br><center><img src="images/3949_3.png"></center><br><br>There are two zigzag lines that passes another set of given points depicted in Figure 13 (a) and (b).<br>Both have the same number of turning points, and the line in (a) is longer than that in (b). However, the solution is (a), because one of the segments of the zigzag line in (b) passes only one given point, violating the rule.<br><br><center><img src="images/3949_4.png"></center><br><br>Your job is to write a program that solves this puzzle.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of multiple datasets, followed by a line containing one zero. Each dataset has the following format.<br><p style="padding-left: 30px"><br>n<br>x1 y1<br>.<br>.<br>.<br>xn yn<br></p><br>Every input item in a dataset is a non-negative integer. Items in a line are separated by a single space.<br>n is the number of the given points. xk and yk (k = 1, ..., n) indicate the position of the k-th point. The order of the points is meaningless. You can assume that 2 ≤ n ≤ 10, 0 ≤ xk ≤ 10, and 0 ≤ yk ≤ 10.</div><p class="pst">Output</p><div class="ptx" lang="en-US">For each dataset, the minimum number of turning points and the length of the shortest zigzag line with that number of turning points should be printed, separated by a space in a line. The length should be in a decimal fraction with an error less than 0.0001 (= 1.0 × 10<sup>-4</sup>).<br>You may assume that the minimum number of turning points is at most four, that is, the number of line segments is at most five.<br>The example solutions for the first four datasets in the sample input are depicted in Figure 14 and 15.</div><p class="pst">Sample Input</p><pre class="sio">2
+0 0
+10 9
+4
+0 0
+3 1
+0 3
+3 3
+10
+2 2
+4 2
+6 2
+2 4
+4 4
+6 4
+2 6
+4 6
+6 6
+3 3
+10
+0 0
+2 0
+4 0
+0 2
+2 2
+4 2
+0 4
+2 4
+4 4
+6 8
+9
+0 0
+1 0
+3 0
+0 1
+1 1
+3 1
+0 2
+1 2
+2 2
+10
+0 0
+1 0
+0 1
+1 1
+9 9
+9 10
+10 9
+10 10
+0 2
+10 8
+10
+0 0
+0 10
+2 0
+2 1
+2 7
+2 10
+5 1
+6 7
+9 2
+10 9
+0</pre><p class="pst">Sample Output</p><pre class="sio">0 13.45362405
+1 18.48683298
+3 24.14213562
+4 24.94813673
+3 12.24264069
+3 60.78289622
+3 502.7804353</pre><p class="pst">Hint</p><div class="ptx" lang="en-US"><center><img src="images/3949_5.png"></center><br><br><center><img src="images/3949_6.png"></center></div><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Asia+Regional+Contest">Asia Regional Contest</a>, Aizu, 2008</div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=3949">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=3949>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=3949">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1524 -- Cowculations</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1524></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1524&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Cowculations</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 270</td><td width="10px"></td><td><b>Accepted:</b> 177</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">A primitive cow culture was discovered by noted anthropologist Dr. Bo Vine. Hundreds of computation tablets were unearthed in a pasture somewhere near Dallas. Dr. Vine managed to decipher the mystery of the tablets when he realized they represented mathematical calculations. He says ``I've always suspected that cows are smarter than they lead us to believe and here's the proof. The big breakthrough was realizing that they are not able to do math by cownting on their fingers, but they are able to think on their feet. But now I have hundreds of these tablets and I need help in verifying my hypothesis." <br>Write a program that helps Dr. Vine verify his hypothesis. This problem statement describes how he thinks the tablets should be interpreted. Each tablet contains six lines and each line contains a sequence of cow symbols. The first two lines represent cow numbers, the next three represent operations on those numbers and the sixth represents the result. Cow numbers make use of four symbols: V U C and D most closely represent the marks made by the cow hooves, so we will use them to represent the symbols. The numbers on the first two lines of a tablet are always a sequence of 5 of these symbols, and the number on the sixth line of a tablet is always a sequence of 8 of these symbols. <br><br>To interpret the cow calculations one must keep track of two numbers, hereafter referred to as Num1 and Num2. Originally Num1 is equal to the number on line 1 of a tablet and Num2 is equal to the number on line 2 of a tablet. However the value of Num2 can change as a result of the operations. There are four possible operations, represented by the symbols A, R, L, and N. <br><br>Operation A causes Num2 to become the ``sum" of Num1 and Num2, using this addition table: <br><br><br><pre><br> A  | V    U    C    D<br>------------------------<br> V  | V    U    C    D<br> U  | U    C    D    V,U<br> C  | C    D    V,U  U,U<br> D  | D    V,U  U,U  C,U<br></pre><br>The first symbol in a result box represents the result of the addition. The second symbol in a box represents a carry symbol. <br><br>For example: U A V = U and C A C = V with a carry of U <br><br>Examples of cow addition are: <br><br><br>VUCDV A VUCDV = VDUCV <br><br>DVVCU A CVUCU = UUVCVC <br><br>Operation R causes Num2 to have its symbols shifted right one position, with the rightmost symbol being lost and a V being placed into the leftmost position. For example VVCDU would become VVVCD. Operation L causes Num2 to have its symbols shifted left one position, with the leftmost symbol being kept and a V placed into the rightmost position. For example VVCDU would become VVCDUV. N is the null operation. It has no effect on Num2. <br><br>After the operations have been performed on Num1 and Num2 the final value of Num2 is hopefully the value marked on the sixth line of the tablet. If the final value of Num2 does not make use of 8 symbols then it is padded with V's on the left (VDCCC becomes VVVVDCCC). <br><br>Dr. Vine says ``I have already verified that all the tablets conform to the hypothesis in terms of the format of the tablets, number of lines and symbols, types of symbols, etc. But I need to verify that the result of the mathematical operation described on lines 1 through 5 is indeed on line 6." </div><p class="pst">Input</p><div class="ptx" lang="en-US">The first line contains an integer N between 1 and 10 describing how many tablets are represented. The next 6N lines represent the N tablets as described in the problem statement. </div><p class="pst">Output</p><div class="ptx" lang="en-US">There should be N+2 lines of output. The first line of output should read COWCULATIONS OUTPUT. There will then be one line of output for each tablet that states either YES (the tablet follows Dr. Vine's hypothesis) or NO (the tablet does not follow Dr. Vine's hypothesis). The final line of output should read END OF OUTPUT. </div><p class="pst">Sample Input</p><pre class="sio">5
+VVVVU
+VVVVU
+A
+A
+A
+VVVVVVUV
+VVCCV
+VVDCC
+L
+R
+A
+VVVVUCVC
+VVCCV
+VVDCC
+R
+L
+A
+VVVVUCVV
+VVUUU
+VVVVU
+A
+N
+N
+VVVVVUCU
+DDDDD
+VVVVU
+A
+L
+L
+UVVVVVVV</pre><p class="pst">Sample Output</p><pre class="sio">COWCULATIONS OUTPUT
+YES
+YES
+YES
+NO
+YES
+END OF OUTPUT</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Mid-Atlantic+1996">Mid-Atlantic 1996</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1524">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1524>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1524">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

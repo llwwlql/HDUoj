@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1806 -- Manhattan 2025</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1806></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1806&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Manhattan 2025</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 1894</td><td width="10px"></td><td><b>Accepted:</b> 931</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Background<br>Manhattan in the year 2025 - it is so densely populated that its old two-dimensional grid of streets and avenues fails to provide enough space for all the traditional vehicles such as cars, bicycles, or busses.Accordingly, the newly developed 3D-Skyjetters become very popular, because they allow to pass the traffic jams on the ground by flying in the air. After a series of horrible accidents caused by 3D-Skyjetters cutting a corner, New York authorities have put into place new regulations of air traffic and are determined to enforce them rigorously. The key point of these regulations is that 3D-Skyjetters must follow virtual airways on a three-dimensional rectangular grid, easy enough for the New Yorkers who had to use the two-dimensional rectangular grid of roads on the ground all their life.<br>Problem<br>You own a company that rents out 3D-Skyjetters. As 3D-Skyjetters are in such an early state of development,they are far from being economical. So your customers keep running out of petrol at all the wrong places,and you need a system to inform them about their current range at all times.<br>You may assume that travelling from one intersection to the next in the grid takes one unit of petrol, no matter if the customer is moving horizontally or vertically, up or down. You may also assume that your customer is located at some intersection where his or her movements are not restricted by the ground or other obstacles, but just by the amount of remaining petrol.<br>Given the amount of petrol, provide a graphical representation of all the intersections in the range of your customer, along with the amount of petrol that is needed to go there.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The first line of the input contains the number of scenarios. For each scenario, there is a line containing the units of remaining petrol, i.e an integer u satisfying 0 <= u <= 9. If more than 9 units of petrol remain, the customer will ignore the display anyway.</div><p class="pst">Output</p><div class="ptx" lang="en-US">Start the output for each scenario with a line containing "Scenario #i:", where i is the number of the scenario starting at 1. Then print a graphical (or rather textual) representation of all intersections that can be reached with the given amount of petrol, along with the units of petrol necessary to go there. In this graphical representation, print the slices of the smallest axis-aligned three-dimensional cube containing all the intersections in the range, and label the slices from the bottom to the top starting at 1. For each slice,start the output with a line containing "slice #s:", where s is the number of the slice. In the lines that follow, print a graphical representation of all the intersections in that slice, using <br><ul><li>the digits 0 to 9 for intersections in the range, representing the amount of petrol necessary to go there,<br><li>and the dot "." for intersections not in the range.</ul><br>Print an additional blank line after each scenario.</div><p class="pst">Sample Input</p><pre class="sio">2
+0
+2</pre><p class="pst">Sample Output</p><pre class="sio">Scenario #1:
+slice #1:
+0
+
+Scenario #2:
+slice #1:
+.....
+.....
+..2..
+.....
+.....
+slice #2:
+.....
+..2..
+.212.
+..2..
+.....
+slice #3:
+..2..
+.212.
+21012
+.212.
+..2..
+slice #4:
+.....
+..2..
+.212.
+..2..
+.....
+slice #5:
+.....
+.....
+..2..
+.....
+.....</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=TUD+Programming+Contest+2003">TUD Programming Contest 2003</a>, Darmstadt, Germany</div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1806">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1806>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1806">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

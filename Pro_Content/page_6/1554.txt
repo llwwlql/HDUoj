@@ -1,0 +1,92 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1554 -- Tournament Brackets</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1554></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1554&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Tournament Brackets</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 203</td><td width="10px"></td><td><b>Accepted:</b> 81</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Programmer's University (PU) sponsors a number of intramural sports tournaments throughout the year. The brackets showing the competing teams and the winners are displayed on a metal board using magnetic signs containing the team names. One such bracket is shown below. Every so often though, a prankster takes all the team names off the board, carefully laying them on the floor in pairs in column-major order, starting at the top of Round 1 and then progressing down through Round 1, then back to the top of Round 2, down that column, and so on. This prankster always leaves a taunting note saying any programmer ought to be able to recreate the exact tournament bracket with just this information. Your task is to write a program that takes as input the names of teams from a tournament bracket and draws that bracket using simple ASCII characters. <br><br>One factor complicating your task is that there may not be enough teams in any tournament to completely fill a bracket. This means that some teams don't have to play a first round match. It is your job to deduce which teams actually played in the first round. <br><pre><br>Round    Round      Round       Winner<br>  1        2          3<br><br>_BIG__<br>      \_BIG_____<br>_DIGS_/         \<br>                 \_FIGURES_<br>                 /         \<br>       _FIGURES_/           \<br>                             \<br>                              \_TIGGER_<br>                              /<br>       _TIGGER__             /<br>                \           /<br>                 \_TIGGER__/<br>_WIG__           /<br>      \_WIG_____/<br>_ZIG__/</pre><br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input contains data for one or more touraments. Tournaments are implicitly numbered starting at 1. Each tournament begins with a line containing a positive odd integer n, 3 <= n <= 31, which is the total number of name signs in the tournament bracket. Following this are (n + 1)/2 lines of team pairings. All lines except the last one contain exactly two team names, separated by a single space. The first name is always immediately above the second name in the output. The last line contains a single team name, the winner of the tournament. All team names are between 3 and 7 upper case characters in the range (A-Z). A value of -1 for n signals the end of all the tournaments. </div><p class="pst">Output</p><div class="ptx" lang="en-US">For each tournament bracket, write a line indicating which bracket it is, "Tournament 1", "Tournament 2", etc., followed by the bracket itself. Team names are always printed left justified with one leading underscore '_' and one or more trailing underscores. The width of each round is the width of the longest team name in that round, plus a leading and trailing underscore. Teams that play in the first round are printed 2 lines apart. Those in the second, third and fourth rounds, if the bracket is so big, are 4, 8, and 16 lines apart, respectively. Contrary to our general guidelines, there will be spaces at the beginning of any line not containing a team playing in the first round. There will also be consecutive spaces in your output as necessary for formatting. However, there must never be trailing spaces at the end of any line, nor any lines with only spaces, nor any completely empty lines. The only special symbols you need to use to construct the bracket are the forward slash '/', the backward slash '\', and the underscore '_'. Note that the last example below shows the largest bracket possible for this problem. </div><p class="pst">Sample Input</p><pre class="sio">11
+BIG DIGS
+WIG ZIG
+BIG FIGURES
+TIGGER WIG
+FIGURES TIGGER
+TIGGER
+5
+LARGE RAGE
+ZEN RAGE
+RAGE
+31
+ANT BOA
+COW DUCK
+EEL FROG
+GOOSE HEN
+IGUANA JACKEL
+KITE LLAMA
+MOUSE NIT
+OCTOPUS PIG
+BOA COW
+FROG GOOSE
+IGUANA KITE
+MOUSE OCTOPUS
+COW GOOSE
+IGUANA OCTOPUS
+GOOSE OCTOPUS
+OCTOPUS
+-1</pre><p class="pst">Sample Output</p><pre class="sio">Tournament 1
+_BIG__
+      \_BIG_____
+_DIGS_/         \
+                 \_FIGURES_
+                 /         \
+       _FIGURES_/           \
+                             \
+                              \_TIGGER_
+                              /
+       _TIGGER__             /
+                \           /
+                 \_TIGGER__/
+_WIG__           /
+      \_WIG_____/
+_ZIG__/
+Tournament 2
+        _ZEN__
+              \
+               \_RAGE_
+_LARGE_        /
+       \_RAGE_/
+_RAGE__/
+Tournament 3
+_ANT_____
+         \_BOA_____
+_BOA_____/         \
+                    \_COW_____
+_COW_____           /         \
+         \_COW_____/           \
+_DUCK____/                      \
+                                 \_GOOSE___
+_EEL_____                        /         \
+         \_FROG____             /           \
+_FROG____/         \           /             \
+                    \_GOOSE___/               \
+_GOOSE___           /                          \
+         \_GOOSE___/                            \
+_HEN_____/                                       \
+                                                  \_OCTOPUS_
+_IGUANA__                                         /
+         \_IGUANA__                              /
+_JACKEL__/         \                            /
+                    \_IGUANA__                 /
+_KITE____           /         \               /
+         \_KITE____/           \             /
+_LLAMA___/                      \           /
+                                 \_OCTOPUS_/
+_MOUSE___                        /
+         \_MOUSE___             /
+_NIT_____/         \           /
+                    \_OCTOPUS_/
+_OCTOPUS_           /
+         \_OCTOPUS_/
+_PIG_____/</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Mid-Central+USA+2003">Mid-Central USA 2003</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1554">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1554>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1554">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

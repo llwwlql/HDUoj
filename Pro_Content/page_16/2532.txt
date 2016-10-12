@@ -1,0 +1,37 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2532 -- Burned Calendar</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2532></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2532&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Burned Calendar</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 2000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 406</td><td width="10px"></td><td><b>Accepted:</b> 131</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">A year calendar is printed using the monospace font according to the following rules: <br><ul><li>All spaces on the printed calendar are represented by dots (ASCII 46). <br><li>Every month occupies a rectangle of 17 by 8 characters, with the name of the month written in all capital letters starting from the 2nd character of the first line. <br><li>All days of the months are printed in 4, 5, or 6 columns 2 characters wide and 7 characters high, with one space between the columns. The first day of the week is Monday. <br><li>Months of the year are arranged in the three rows separated by horizontal and vertical lines of spaces. Each row contains four months. The calendar margins are of 1 space from all sides. Therefore, the whole calendar has size of 73 by 28 characters. </ul><br>Note that January 1st, 1900 was Monday. Also note that the year is a leap year if its number is divisible by 4 and not divisible by 100, or divisible by 400. For example, a part of the printed calendar from October to December 2002 looks like this: <br><pre>.OCTOBER...........NOVEMBER..........DECEMBER.........<br>....7.14.21.28........4.11.18.25........2..9.16.23.30.<br>.1..8.15.22.29........5.12.19.26........3.10.17.24.31.<br>.2..9.16.23.30........6.13.20.27........4.11.18.25....<br>.3.10.17.24.31........7.14.21.28........5.12.19.26....<br>.4.11.18.25........1..8.15.22.29........6.13.20.27....<br>.5.12.19.26........2..9.16.23.30........7.14.21.28....<br>.6.13.20.27........3.10.17.24........1..8.15.22.29....<br>......................................................</pre><br>The calendar was printed and then burned, with only a small rectangular piece left. Your program must determine to which of years from 1900 to 2100 this piece could belong. </div><p class="pst">Input</p><div class="ptx" lang="en-US">The first line of the input file contains integer numbers N and M - the sizes of the piece, separated by spaces. The following M lines contain N characters each - the piece of calendar. 2 <= N, M <= 10 </div><p class="pst">Output</p><div class="ptx" lang="en-US">Output file must contain an ordered list of year numbers, one year per line. If given piece could not belong to any calendar, output must contain a single integer 0 (zero). </div><p class="pst">Sample Input</p><pre class="sio">4 4
+1..8
+....
+JUNE
+1..8
+</pre><p class="pst">Sample Output</p><pre class="sio">1903
+1914
+1925
+1931
+1942
+1953
+1959
+1970
+1981
+1987
+1998
+2009
+2015
+2026
+2037
+2043
+2054
+2065
+2071
+2082
+2093
+2099
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Northeastern+Europe+2002">Northeastern Europe 2002</a>, Far-Eastern Subregion</div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2532">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2532>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2532">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

@@ -1,0 +1,54 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2580 -- The Door/Key Problem</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2580></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2580&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">The Door/Key Problem</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 631</td><td width="10px"></td><td><b>Accepted:</b> 198</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Thibodeaux has managed to once again lock himself inside his own house (this happens all too often). Boudreaux, being the good buddy that he is, has taken the precaution of scattering keys to the locked rooms throughout Thibodeaux's house. It is up to you to determine if Thibodeaux can make it to his bedroom (room 0).</div><p class="pst">Input</p><div class="ptx" lang="en-US">Input to this problem will consist of a (non-empty) series of up to 100 data sets. Each data set will be formatted according to the following description, and there will be no blank lines separating data sets. <br><br>A single data set has 4 components: <br><ol><li>Start line - A single line: <br>         START M N<br>      <br>where M indicates the starting room, and N indicates the number of rooms in the house (1 <= N <= 20). <br><li>Room list - A series of N lines. Each line lists, for a single room, every door that leads to a room of higher number and the keys necessary to open the door from either side. Rooms will be represented by numbers and each key will be represented by a single capital letter (A - Z). For example, if room 3 had doors to rooms 1, 5, and 7, and the door to room 1 took an A key, the door to room 5 took an F key, and the door to room 7 took an X key and a P key, the line for room 1 would read: <br>	 3A<br>      <br>and the line for room 3 would read: <br>	 5F 7PX<br>      <br>The first line in the list represents room 0. The second line represents room 1, and so on until the last line, which represents room N - 1. It is possible for lines to be empty (in particular, the last line will always be empty since it is the highest numbered room). On each line, the adjacent rooms are always listed in ascending order. It is possible for rooms to be connected by multiple doors and for doors to require multiple keys; required keys for a door will be listed in alphabetical order. <br><li>Key list - A series of N lines. Each line lists, for a single room, the keys, in alphabetical order, that are in that room. <br><li>End line - A single line: <br>         END</ol>  <br>After the last data set, there will be a single line: <br>   ENDOFINPUT<br><br>Notes: <br>There will be no more than 100 doors in any data set. <br>No room will have more than 20 doors. <br>Some doors may not require keys. <br>In any data set, all keys are unique and can be used multiple times. <br></div><p class="pst">Output</p><div class="ptx" lang="en-US">For each data set, there will be exactly one line of output. If it is possible for Thibodeaux to reach his bedroom (room 0), print a line: <br><br>   YES<br><br>Otherwise, print a line: <br>   NO<br><br></div><p class="pst">Sample Input</p><pre class="sio">START 1 2
+1A
+
+
+A
+END
+START 1 5
+1F
+2A 2B 3CD 3E
+
+
+
+
+B
+C D
+F
+A E
+END
+START 1 10
+9I
+2A
+3B
+4C
+5D
+6E
+7F
+8G
+9H
+
+
+A
+B
+C
+D
+E
+F
+G
+H
+X
+END
+ENDOFINPUT
+</pre><p class="pst">Sample Output</p><pre class="sio">YES
+YES
+NO
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=South+Central+USA+2003">South Central USA 2003</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2580">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2580>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2580">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

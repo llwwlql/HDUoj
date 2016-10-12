@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1983 -- Name the Crossing</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1983></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1983&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Name the Crossing</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 30000K</td></tr><tr><td><b>Total Submissions:</b> 329</td><td width="10px"></td><td><b>Accepted:</b> 138</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">The city of Kyoto is well-known for its Chinese plan: streets are either North-South or East-West. Some streets are numbered, but most of them have real names. <br>Crossings are named after the two streets crossing there, e.g. Kawaramachi-Sanjo is the crossing of Kawaramachi street and Sanjo street. But there is a problem: which name should come first? At first the order seems quite arbitrary: one says Kawaramachi-Sanjo (North-South first) but Shijo-Kawaramachi (East-West first). With some experience, one realizes that actually there seems to be an "order" on the streets, for instance in the above Shijo is "stronger" than Kawaramachi, which in turn is "stronger" than Sanjo. One can use this order to deduce the names of other crossings. <br>You are given as input a list of known crossing names X-Y. Streets are either North-South or East-West, and only orthogonal streets may cross. <br><br>As your list is very incomplete, you start by completing it using the following rule: <br><ul><li>two streets A and B have equal strength if (1) to (3) are all true: <br><ol><li>they both cross the same third street C in the input <br><li>there is no street D such that D-A and B-D appear in the input <br><li>there is no street E such that A-E and E-B appear in the input </ol></ul><br>We use this definition to extend our strength relation: <br><ul><li>A is stronger than B, when there is a sequence A = A1, A2, ..., An = B, with n at least 2, <br>where, for any i in 1 .. n-1, either Ai-Ai+1 is an input crossing or Ai and Ai+1 have equal strength. </ul><br>Then you are asked whether some other possible crossing names X-Y are valid. You should answer affirmatively if you can infer the validity of a name, negatively if you cannot. Concretely: <br><ul><li>YES if you can infer that the two streets are orthogonal, and X is stronger than Y <br><li>NO otherwise </ul></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input is a sequence of data sets, each of the form <br><br>N<br>Crossing1<br>...<br>CrossingN<br>M<br>Question1<br>...<br>QuestionM<br>Both Crossings and Questions are of the form <br><br>X-Y <br>where X and Y are strings of alphanumerical characters, of lengths no more than 16. There is no white space, and case matters for alphabetical characters. <br>N and M are between 1 and 1000 inclusive, and there are no more than 200 streets in a data set. <br><br>The last data set is followed by a line containing a zero. <br><br></div><p class="pst">Output</p><div class="ptx" lang="en-US">The output for each data set should be composed of M+1 lines, the first one containing the number of streets in the Crossing part of the input, followed by the answers to each question, either YES or NO without any spaces. </div><p class="pst">Sample Input</p><pre class="sio">7
+Shijo-Kawaramachi
+Karasuma-Imadegawa
+Kawaramachi-Imadegawa
+Nishioji-Shijo
+Karasuma-Gojo
+Torimaru-Rokujo
+Rokujo-Karasuma
+6
+Shijo-Karasuma
+Imadegawa-Nishioji
+Nishioji-Gojo
+Shijo-Torimaru
+Torimaru-Gojo
+Shijo-Kawabata
+4
+1jo-Midosuji
+Midosuji-2jo
+2jo-Omotesando
+Omotesando-1jo
+4
+Midosuji-1jo
+1jo-Midosuji
+Midosuji-Omotesando
+1jo-1jo
+0
+</pre><p class="pst">Sample Output</p><pre class="sio">8
+YES
+NO
+YES
+NO
+YES
+NO
+4
+YES
+YES
+NO
+NO
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Japan+2004+Domestic">Japan 2004 Domestic</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1983">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1983>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1983">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

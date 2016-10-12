@@ -1,0 +1,76 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>1249 -- Oil Pipeline</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=1249></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=1249&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Oil Pipeline</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 10000K</td></tr><tr><td><b>Total Submissions:</b> 307</td><td width="10px"></td><td><b>Accepted:</b> 102</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Rocky Oil owns several rectangular oil fields in which it is drilling new wells. It wants to connect all wells in a field to a single East-West pipeline using straight North-South pipes. Your task is to write a program that first finds the location of the E-W pipeline such that the total length of the N-S pipes in the field is minimal; then it must draw a map of the oil field, if possible. <br><br>Each rectangular oil field is a grid 94 units long in the E-W direction and 73 units long in the N-S direction. The grid uses integer coordinates, with the SW corner at (1,1) and the NE corner at (94,73). Oil wells may be at any integer coordinates within the grid, and all wells will appear at different positions. The E-W pipeline will stretch across the entire field at an integer N-S coordinate. Wells with the same E-W coordinate share the same pipe. In case there are multiple positions for the E-W pipeline giving the same minimal length, always choose the one furthest south (i.e., with the lowest N-S coordinate). <br><br>Consider the first input example below. With the E-W pipeline at 11, the well at E-W position 1 is on the pipeline and has length zero. The two wells at E-W position 69 can share a single pipe of length 18. The total length for all three wells is 18. If the E-W pipeline were at 20 there would be two N-S pipes, one of length 9 at position 1 and another of length 9 at position 69, again with a total length of 18. In fact, any E-W pipeline located from 11 to 20 results in a total length of 18, which is minimal. Since there is more than one position for the pipeline that minimizes the length, choose the southernmost position, which is 11. <br><br>Any map drawn must occupy at most 69 columns and 19 rows (not counting borders and labels) so it fits on a standard-sized display. The map must include the E-W pipeline, all wells, and all N-S pipes. Only that portion of the field actually containing wells should be drawn, using the smallest bounding rectangle whose edges are multiples of 5. The E-W pipeline will always stretch across the entire map, regardless of its width. Wells must be inside the bounding rectangle, not on any of its edges. These constraints may make it impossible to draw some oil fields. The first input example shows the largest map possible. <br></div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of data for one or more oil fields, followed by a line containing 0 0 which signals the end of the input. Data for each oil field consists of one or more pairs of positive integers, one pair per line, representing the positions of oil wells in the field. The pair -1 -1 indicates the end of the data for a field. <br></div><p class="pst">Output</p><div class="ptx" lang="en-US">For each oil field, output a line with a numbered header. Then output the map of the oil field, if possible. Otherwise, output a sentence with the location of the pipeline. Use the exact format shown below. <br><br>Use '@' to represent an oil well, '*' to represent a pipe, and '.' (a period) to represent an empty grid location. Wells take precedence over pipes, so if a well and a pipe occupy the same location, use '@'. Draw a border around the mapped oil field, using '|' (a vertical bar) for N-S edges and '-' (a dash) for E-W edges, but mark every 5th grid position with '+', as shown in the examples. Label each '+' with its position in the oil field. The label for each N-S '+' comes immediately before the '+' sign. The label for the northernmost '+' must start at the beginning of the first line of output. Labels for an E-W '+' must always have the most significant digit immediately below the '+'. Contrary to the usual output conventions, some of the lines in the map will have leading blanks. <br></div><p class="pst">Sample Input</p><pre class="sio">1 11
+69 29
+69 20
+-1 -1
+35 35
+-1 -1
+1 1
+94 73
+1 73
+94 1
+-1 -1
+2 2
+3 7
+4 4
+6 1
+-1 -1
+0 0</pre><p class="pst">Sample Output</p><pre class="sio">OIL FIELD 1
+30+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+  |....................................................................@|
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+25+....................................................................*+
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+20+....................................................................@+
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+15+....................................................................*+
+  |....................................................................*|
+  |....................................................................*|
+  |....................................................................*|
+  |@********************************************************************|
+10+----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+  0    5    10   15   20   25   30   35   40   45   50   55   60   65   70
+OIL FIELD 2
+40+----+----+
+  |.........|
+  |.........|
+  |.........|
+  |.........|
+35+****@****+
+  |.........|
+  |.........|
+  |.........|
+  |.........|
+30+----+----+
+  30   35   40
+OIL FIELD 3
+Map is too big to draw for pipeline at 1
+OIL FIELD 4
+10+----+----+
+  |.........|
+  |.........|
+  |..@......|
+  |..*......|
+ 5+..*......+
+  |..*@.....|
+  |..**.....|
+  |*@*******|
+  |.....@...|
+ 0+----+----+
+  0    5    10</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Mid-Central+USA+2002">Mid-Central USA 2002</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=1249">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=1249>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=1249">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

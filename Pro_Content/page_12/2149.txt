@@ -1,0 +1,48 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2149 -- Inherit the Spheres</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2149></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2149&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Inherit the Spheres</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 5000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 368</td><td width="10px"></td><td><b>Accepted:</b> 143</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">In the year 2xxx, an expedition team landing on a planet found strange objects made by an ancient species living on that planet. They are transparent boxes containing opaque solid spheres (Figure 12). There are also many lithographs which seem to contain positions and radiuses of spheres.<br>Initially their objective was unknown, but Professor Zambendorf found the cross section formed by a horizontal plane plays an important role. For example, the cross section of an object changes as in Figure 13 by sliding the plane from bottom to top.<br><center><img src=images/2149_1.jpg></center><br>He eventually found that some information is expressed by the transition of the number of connected figures in the cross section, where each connected figure is a union of discs intersecting or touching each other, and each disc is a cross section of the corresponding solid sphere. For instance, in Figure 13, whose geometry is described in the first sample dataset later, the number of connected figures changes as 0, 1, 2, 1, 2, 3, 2, 1, and 0, at z = 0.0000, 162.0000, 167.0000, 173.0004, 185.0000, 191.9996, 198.0000, 203.0000, and 205.0000, respectively. By assigning 1 for increment and 0 for decrement, the transitions of this sequence can be expressed by an 8-bit binary number 11011000.<br>For helping further analysis, write a program to determine the transitions when sliding the horizontal plane from bottom (z = 0) to top (z = 36000).</div><p class="pst">Input</p><div class="ptx" lang="en-US">The input consists of a series of datasets. Each dataset begins with a line containing a positive integer, which indicates the number of spheres N in the dataset. It is followed by N lines describing the centers and radiuses of the spheres. Each of the N lines has four positive integers Xi, Yi, Zi, and Ri (i = 1, ...  ,N) describing the center and the radius of the i-th sphere, respectively.<br>You may assume 1 <= N <= 100, 1 <= Ri <= 2000, 0 < Xi -Ri < Xi + Ri < 4000, 0 < Yi -Ri < Yi + Ri < 16000, and 0 < Zi -Ri < Zi + Ri < 36000. Each solid sphere is defined as the set of all points (x, y, z) satisfying (x - Xi)<sup>2</sup> + (y - Yi)<sup>2</sup> + (z - Zi)<sup>2</sup> <= Ri<sup>2</sup><br>A sphere may contain other spheres. No two spheres are mutually tangent. Every Zi ± Ri and minimum/maximum z coordinates of a circle formed by the intersection of any two spheres differ from each other by at least 0.01.<br>The end of the input is indicated by a line with one zero.</div><p class="pst">Output</p><div class="ptx" lang="en-US">For each dataset, your program should output two lines. The first line should contain an integer M indicating the number of transitions. The second line should contain an M-bit binary number that expresses the transitions of the number of connected figures as specified above.</div><p class="pst">Sample Input</p><pre class="sio">3
+95 20 180 18
+125 20 185 18
+40 27 195 10
+1
+5 5 5 4
+2
+5 5 5 4
+5 5 5 3
+2
+5 5 5 4
+5 7 5 3
+16
+2338 3465 29034 710
+1571 14389 25019 842
+1706 8015 11324 1155
+1899 4359 33815 888
+2160 10364 20511 1264
+2048 8835 23706 1906
+2598 13041 23679 618
+1613 11112 8003 1125
+1777 4754 25986 929
+2707 9945 11458 617
+1153 10358 4305 755
+2462 8450 21838 934
+1822 11539 10025 1639
+1473 11939 12924 638
+1388 8519 18653 834
+2239 7384 32729 862
+0</pre><p class="pst">Sample Output</p><pre class="sio">8
+11011000
+2
+10
+2
+10
+2
+10
+28
+1011100100110101101000101100</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Japan+2004">Japan 2004</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2149">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2149>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2149">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

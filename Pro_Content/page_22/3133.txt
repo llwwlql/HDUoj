@@ -1,0 +1,68 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>3133 -- Manhattan Wiring</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=3133></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=3133&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Manhattan Wiring</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 5000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 1803</td><td width="10px"></td><td><b>Accepted:</b> 1068</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US"><span lang="en-us"><p>There is a rectangular area containing <i>n</i> &times; <i>m</i> cells. Two cells are marked with &ldquo;2&rdquo;, and another two with &ldquo;3&rdquo;. Some cells are occupied by obstacles. You should connect the two &ldquo;2&rdquo;s and also the two &ldquo;3&rdquo;s with non-intersecting lines. Lines can run only vertically or horizontally connecting centers of cells without obstacles.</p><p>Lines cannot run on a cell with an obstacle. Only one line can run on a cell at most once. Hence, a line cannot intersect with the other line, nor with itself. Under these constraints, the total length of the two lines should be minimized. The length of a line is defined as the number of cell borders it passes. In particular, a line connecting cells sharing their border has length 1.</p><p>Fig. 1(a) shows an example setting. Fig. 1(b) shows two lines satisfying the constraints above with minimum total length 18.</p><div align="center"><img src=images/3133_1.png></div><p align="center">Figure 1: An example of setting and its solution</p></span></div><p class="pst">Input</p><div class="ptx" lang="en-US"><span lang="en-us"><p>The input consists of multiple datasets, each in the following format.</p><blockquote><table border="0" width="50"><tr><td width="50%"><i>n</i></td><td width="50%"><i>m</i></td></tr><tr><td colspan="2">row<sub>1</sub></td></tr><tr><td colspan="2">&hellip;</td></tr><tr><td colspan="2">row<i><sub>n</sub></i></td></tr></table></blockquote><p><i>n</i> is the number of rows which satisfies 2 &le; <i>n</i> &le; 9. m is the number of columns which satisfies 2 &le; <i>m</i> &le; 9. Each row<sub><i>i</i></sub> is a sequence of <i>m</i> digits separated by a space. The digits mean the following.</p><blockquote><p><code>0:</code> Empty</p><p><code>1:</code> Occupied by an obstacle</p><p><code>2:</code> Marked with &ldquo;2&rdquo;</p><p><code>3:</code> Marked with &ldquo;3&rdquo;</p></blockquote><p>The end of the input is indicated with a line containing two zeros separated by a space.</p></span></div><p class="pst">Output</p><div class="ptx" lang="en-US"><span lang="en-us"><p>For each dataset, one line containing the minimum total length of the two lines should be output. If there is no pair of lines satisfying the requirement, answer &ldquo;<code>0</code>&rdquo; instead. No other characters should be contained in the output.</p></span></div><p class="pst">Sample Input</p><pre class="sio">5 5
+0 0 0 0 0
+0 0 0 3 0
+2 0 2 0 0
+1 0 1 1 1
+0 0 0 0 3
+2 3
+2 2 0
+0 3 3
+6 5
+2 0 0 0 0
+0 3 0 0 0
+0 0 0 0 0
+1 1 1 0 0
+0 0 0 0 0
+0 0 2 3 0
+5 9
+0 0 0 0 0 0 0 0 0
+0 0 0 0 3 0 0 0 0
+0 2 0 0 0 0 0 2 0
+0 0 0 0 3 0 0 0 0
+0 0 0 0 0 0 0 0 0
+9 9
+3 0 0 0 0 0 0 0 2
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+2 0 0 0 0 0 0 0 3
+9 9
+0 0 0 1 0 0 0 0 0
+0 2 0 1 0 0 0 0 3
+0 0 0 1 0 0 0 0 2
+0 0 0 1 0 0 0 0 3
+0 0 0 1 1 1 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+9 9
+0 0 0 0 0 0 0 0 0
+0 3 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 2 3 2
+0 0</pre><p class="pst">Sample Output</p><pre class="sio">18
+2
+17
+12
+0
+52
+43</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Japan+2006">Japan 2006</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=3133">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=3133>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=3133">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

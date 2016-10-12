@@ -1,0 +1,46 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>2290 -- House Numbers</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=2290></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=2290&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">House Numbers</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 1013</td><td width="10px"></td><td><b>Accepted:</b> 255</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">NarmakSung has a hardware shop that makes new digit plates for house numbers. If a house number is 195, for example, he has to create one plate for digit 1, one for digit 9, and one for digit 5. But, the orders are not always that simple. He may get orders to make digit plates, for example, for all houses in one side of a street. <br><br>Since making several plates of the same digit costs much less than making all digits for each house one by one, he wants to know, for a big order he receives, how many of each digit plate he has to make.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The first number in the input line, t (1 <= t <= 10) is the number of orders. Following this, t orders are written in the input. Each order starts with a line containing a street name, an arbitrary string of length at most 50 characters. The second line contains a single integer N (1 <= N <= 10), the number of sub-orders, followed by N lines of sub-orders. Sub-orders are of three kinds: <br><ul><li>A single house number: in this case, the sub-order line contains only a single integer n (1 <= n <= 9999)<br><li>A series of house numbers: in this case, the sub-order line starts with a '+', followed by three integer numbers a, b, c (1 <= a, b, c <= 9999). This means that NarmakSung has to make plates for house numbers from a up to b with distance of c. That is, digit plates have to be made for house numbers a, a+c, a+2c, ..., b. We assume that a < b, b - a is a multiple of c, and c <= b - a.<br><li>A series of house numbers to be excluded: this kind of sub-orders specifies that a series of house numbers should not be made. In this case, the sub-order line starts with a '-', followed by three integer numbers with exactly the same conditions as in the previous case.</ul><br>Note that if a house number is ordered more than once in two separate sub-orders, it is counted only once if it is not excluded at all (like number 100 in the second test case in the sample input). Also, if a house number is excluded somewhere in the test case, it cancels any order for that number, even if it appears later in the test case (like number 500 in the second sample). Note that it is possible to exclude some numbers that do not appear in other orders at all. In this case, these numbers are ignored (like 900 in the second sample).<br></div><p class="pst">Output</p><div class="ptx" lang="en-US">One set of output data is written for each input order consisting of 13 lines. Each set starts with one line containing the street name exactly as appeared in the input order. The next line must be of the form C addresses where C is the total number of house numbers to be made. In the special case of C = 1, the output line should be 1 address. The next 10 lines should be of the following form: Line i should contain the number of digit plates needed to be made for digit i. These 10 lines are on the format "Make X digit Y" where X is how many copies of digit Y they need to make. The last line states the total number Z of digits needed, on the format "In total Z digits". If there is only one digit to produce, it should say, "In total 1 digit", in order to be grammatically correct. The output should be case-sensitive.</div><p class="pst">Sample Input</p><pre class="sio">2 
+Azadi Street
+2
++ 101 103 2
+275 
+Sharif Highway
+3
+100
+- 500 900 100
++  100 800 100
+</pre><p class="pst">Sample Output</p><pre class="sio">Azadi Street
+3 addresses
+Make 2 digit 0
+Make 3 digit 1
+Make 1 digit 2
+Make 1 digit 3
+Make 0 digit 4
+Make 1 digit 5
+Make 0 digit 6
+Make 1 digit 7
+Make 0 digit 8
+Make 0 digit 9
+In total 9 digits
+Sharif Highway
+4 addresses
+Make 8 digit 0
+Make 1 digit 1
+Make 1 digit 2
+Make 1 digit 3
+Make 1 digit 4
+Make 0 digit 5
+Make 0 digit 6
+Make 0 digit 7
+Make 0 digit 8
+Make 0 digit 9
+In total 12 digits
+</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Tehran+2003">Tehran 2003</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=2290">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=2290>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=2290">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>

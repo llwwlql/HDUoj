@@ -1,0 +1,84 @@
+<html><head><meta http-equiv="Pragma" content="no-cache"><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta http-equiv="Content-Language" content="en-US"><title>3809 -- Twenty Questions</title><link rel=stylesheet href='poj.css' type='text/css'><link rel='shortcut icon' href='poj.ico'><link rel='icon' href='poj.gif' type='image/gif'><script src='poj.js' language='javascript'></script></head><body lang="en-US" leftmargin=5 link=blue alink=blue vlink=blue onkeydown=KeyDown(event)><a name=top></a><TABLE style='BORDER-COLLAPSE: collapse' borderColor=#ffffff width=100% border=1><TBODY><TR><TD align=CENTER colSpan=5><table class=h1 cellpadding=0><tr><td width=25% align=left><img src='images/logo1.jpg' height=100 border=0></td><td colspan=3 bgcolor='#EAEFFD'><table class=h2><tr><td><img border=0 src='images/logo0.gif' width=450 height=90></td><td width=95><img border=0 src='images/logo3.gif' width=95 height=95></td></tr></table></td></tr></table></TD></TR><TR vAlign=top align=CENTER bgColor=#6589d1><TH class=h>Online Judge</TH><TH class=h>Problem Set</TH><TH class=h>Authors</TH><TH class=h>Online Contests</TH><TH class=h>User</TH></TR><TR vAlign=top align=CENTER bgColor='#f1f1fd'><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><A href='bbs'>Web Board</A><BR><A href='./'>Home Page</A><BR><A href='page?id=1000' target=_blank>F.A.Qs</A><BR><a href='chart'>Statistical Charts</a></TD><TD class='h' onMouseOver='scbg(this, 1)' onMouseOut='scbg(this, 0)'><FORM action=gotoproblem method=get><A href='problemlist'>Problems</A><BR><A href='submit'>Submit Problem</A><BR><A href='status'>Online Status</A><BR><font color=blue>Prob.ID:</font><input type=text name=pid size=6><input type=Submit value=Go name=pb1></form></td><TD class='h' onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=GET action=searchuser><a href=register>Register</a><br><a href=modifyuser>Update your info</a><br><a href=userlist>Authors ranklist</a><br><input type=text name=key size=10><input type=Submit value=Search name=B1></form></TD>
+<TD class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><font color=#1a5cc8>Current Contest</font><br><a href=pastcontests>Past Contests</a><br><a href=contests>Scheduled Contests</a><br><a href=challenge.html target=_blank><font color=red>Award Contest</font></a></td><TD align=left class=h onMouseOver='scbg(this,1)' onMouseOut='scbg(this,0)'><form method=POST action=login><table><tr><td>User ID:</td><td><input type=text name=user_id1 size=10 style='font-family:monospace'></td></tr><tr><td>Password:</td><td><input type=password name=password1 size=10 style='font-family:monospace'></td></tr></table><input type=Submit value=login name=B1>&nbsp;&nbsp;<a href=register target=_parent>Register</a><input type=hidden name=url value=/problem?id=3809></form></td></TR></TABLE><table border=0 width=100% background=images/table_back.jpg><tr><td>
+<div style='position: absolute; right: 10px;'>Language:<select size=1 onChange="window.location.href='problem?id=3809&lang='+this.value+'&change=true'"><option value='default' selected>Default</option></select></div><div class="ptt" lang="en-US">Twenty Questions</div>
+<div class="plm"><table align="center"><tr><td><b>Time Limit:</b> 1000MS</td><td width="10px"></td><td><b>Memory Limit:</b> 65536K</td></tr><tr><td><b>Total Submissions:</b> 232</td><td width="10px"></td><td><b>Accepted:</b> 98</td></table></div><p class="pst">Description</p><div class="ptx" lang="en-US">Consider a closed world and a set of features that are deﬁned for all the objects in the world. Each feature can be answered with “yes” or “no”. Using those features, we can identify any object from the rest of the objects in the world. In other words, each object can be represented as a ﬁxed-length sequence of booleans. Any object is diﬀerent from other objects by at least one feature.<br><br>You would like to identify an object from others. For this purpose, you can ask a series of questions to someone who knows what the object is. Every question you can ask is about one of the features. He/she immediately answers each question with “yes” or “no” correctly. You can choose the next question after you get the answer to the previous question. You kindly pay the answerer 100 yen as a tip for each question. Because you don’t have surplus money, it is necessary to minimize the number of questions in the worst case. You don’t know what is the correct answer, but fortunately know all the objects in the world. Therefore, you can plan an optimal strategy before you start questioning.<br><br>The problem you have to solve is: given a set of boolean-encoded objects, minimize the maximum number of questions by which every object in the set is identiﬁable.</div><p class="pst">Input</p><div class="ptx" lang="en-US">The input is a sequence of multiple datasets. Each dataset begins with a line which consists of two integers, m and n: the number of features, and the number of objects, respectively. You can assume 0 < m <= 11 and 0 < n <= 128. It is followed by n lines, each of which corresponds to an object. Each line includes a binary string of length m which represent the value (“yes” or “no”) of features. There are no two identical objects. <br><br>The end of the input is indicated by a line containing two zeros. There are at most 100 datasets.</div><p class="pst">Output</p><div class="ptx" lang="en-US">For each dataset, minimize the maximum number of questions by which every object is identifiable and output the result.</div><p class="pst">Sample Input</p><pre class="sio">8 1
+11010101
+11 4
+00111001100
+01001101011
+01010000011
+01100110001
+11 16
+01000101111
+01011000000
+01011111001
+01101101001
+01110010111
+01110100111
+10000001010
+10010001000
+10010110100
+10100010100
+10101010110
+10110100010
+11001010011
+11011001001
+11111000111
+11111011101
+11 12
+10000000000
+01000000000
+00100000000
+00010000000
+00001000000
+00000100000
+00000010000
+00000001000
+00000000100
+00000000010
+00000000001
+00000000000
+9 32
+001000000
+000100000
+000010000
+000001000
+000000100
+000000010
+000000001
+000000000
+011000000
+010100000
+010010000
+010001000
+010000100
+010000010
+010000001
+010000000
+101000000
+100100000
+100010000
+100001000
+100000100
+100000010
+100000001
+100000000
+111000000
+110100000
+110010000
+110001000
+110000100
+110000010
+110000001
+110000000
+0 0</pre><p class="pst">Sample Output</p><pre class="sio">0
+2
+4
+11
+9</pre><p class="pst">Source</p><div class="ptx" lang="en-US"><a href="searchproblem?field=source&key=Tokyo+2009">Tokyo 2009</a></div></td></tr></table>
+<font color=#333399 size=3><p align="center">
+[<a href="submit?problem_id=3809">Submit</a>]&nbsp;&nbsp;
+ [<a href="javascript:history.go(-1)">Go Back</a>]&nbsp;&nbsp; [<a href=problemstatus?problem_id=3809>Status</a>]&nbsp;&nbsp; 
+[<a href="bbs?problem_id=3809">Discuss</a>]
+</font></p>
+<p><img height=30 src=images/home.gif width=40 border=0><font size=3><a href=.>Home Page</a> </font>&nbsp;&nbsp;<img height=30 src='images/goback.gif' width=40 border=0><font size=3><a href='javascript:history.go(-1)'>Go Back</a>&nbsp;&nbsp;<img height=30 width=40 border=0 src='images/top.gif'><a href=#top>To top</a></font><br><hr><P align=center style='font-family:Arial, Helvetica, sans-serif'>All Rights Reserved 2003-2013 Ying Fuchen,Xu Pengcheng,Xie Di<br>Any problem, Please <a href=mailto:webmaster@poj.org>Contact Administrator</a></p><script type="text/javascript"> var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-790353-1']); _gaq.push(['_trackPageview']); (function() { var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true; ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js'; var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s); })(); </script></body></html>
